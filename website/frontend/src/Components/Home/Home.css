@@ -1,0 +1,31 @@
+.home_wrap{
+    position: relative;
+    display: flex;
+    color: red;
+    justify-content: space-between;
+    margin: 0 100px 0 100px;
+
+}
+.home_user{
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+}
+.home_trailer{
+    width: 100%;
+    position: absolute;
+}
+.home_content{
+    position: relative;
+    font-size: 3rem;
+    color: red;
+}
+.home-to-content{
+    font-size: 200%;
+    color: red;
+}
+.home_item{
+    left: 0;
+    position: absolute;
+    color: red;
+}
