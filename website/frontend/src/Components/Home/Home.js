@@ -1,5 +1,5 @@
-import bgImage from '../../assets/video/video.mp4'
-import { Link } from 'react-router-dom';
+import bgVideo from '../../data/video/v1.mp4'
+import { Link } from 'react-router-dom'
 import './Home.css'
 function Home() {
     return ( 
@@ -7,7 +7,7 @@ function Home() {
             <div>
                 <video className='home_trailer'
                 autoPlay loop muted
-                src={bgImage} type='video/mp4'
+                src={bgVideo} type='video/mp4'
                 />
             </div>
             <div className='home_wrap'>

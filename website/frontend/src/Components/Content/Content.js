@@ -1,12 +1,30 @@
-import videoContent from '../../assets/video/video.mp4'
-import imgContent from '../../assets/img/a.jpg'
+import{data} from '../../data'
+import { useState } from 'react'
+import Video from '../Contentvideo'
 import './Content.css'
 function Content() {
+    const [show,setShow] =useState(false)
+    const [product,setProduct] = useState(data)
+    //loc ten phim
+    const filterFilm = (title)=>{
+        setProduct(
+            data.filter((item) => {
+                return item.title === title
+            })
+        )
+    }
+    //mounted content video
+    const mountVideo=()=>{
+        setShow(()=>{
+            return true
+        })
+    }
+
     return ( 
         <div className='app'>
             <div className='header'>
                 <div className='header_home'>
-                    <div>
+                    <div className='header_title'>
                         <h1>Phim Bờ Rồ</h1>
                     </div>
                     <div className='header_user'>
@@ -23,69 +41,37 @@ function Content() {
                     />
                 </div>
                 <div className='header_category'>
-                    <ul className='header_list'>
-                        <li className='header_list-item'>Hành động</li>
-                        <li className='header_list-item'>Phiêu lưu</li>
-                        <li className='header_list-item'>Hoạt hình</li>
-                        <li className='header_list-item'>Kungfu</li>
-                        <li className='header_list-item'>Kinh dị</li>
-                    </ul>
+                    <div className='header_list'>
+                        <button onClick={()=>filterFilm('hanhdong')} className='header_list-item'>Hành động</button>
+                        <button onClick={()=>filterFilm('phieuluu')} className='header_list-item'>Phiêu lưu</button>
+                        <button onClick={()=>filterFilm('hoathinh')} className='header_list-item'>Hoạt hình</button>
+                        <button onClick={()=>filterFilm('kungfu')} className='header_list-item'>Kungfu</button>
+                        <button onClick={()=>filterFilm('kinhdi')} className='header_list-item'>Kinh dị</button>
+                    </div>
                 </div>
             </div>
             <div className='product'>
-                <div className='product_video'>
-                    <video
-                    controls
-                    className='product_video-item'
-                    src={videoContent} type='video/mp4'
-                    loop
-                    />
-                </div>
+                {show && <Video />}
                 <div className='product_wrap'>
-                    <div className='product_film'>
-                        <img className='product_img' src={imgContent} alt='/'/>
-                        <p>Tập:</p>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                    </div>
-                    <div className='product_film'>
-                        <img className='product_img' src={imgContent} alt='/'/>
-                        <p>Tập:</p>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                    </div>
-                    <div className='product_film'>
-                        <img className='product_img' src={imgContent} alt='/'/>
-                        <p>Tập:</p>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                    </div>
-                    <div className='product_film'>
-                        <img className='product_img' src={imgContent} alt='/'/>
-                        <p>Tập:</p>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                    </div>
-                    <div className='product_film'>
-                        <img className='product_img' src={imgContent} alt='/'/>
-                        <p>Tập:</p>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                    </div>
+                    {product.map((item,index) =>(
+                        <div className='product_film'>
+                            <img 
+                            key={index}
+                            onClick={()=>mountVideo()} 
+                            className='product_img' 
+                            src={item.img} 
+                            alt={item.title}
+                            />
+                            <div className='product_item'>
+                                <spam>{item.video}</spam>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
     )
 }
+
 
 export default Content;

@@ -13,8 +13,10 @@
 }
 .home_trailer{
     width: 100%;
+    height: auto;
     position: absolute;
 }
+
 .home_content{
     position: relative;
     font-size: 3rem;
@@ -27,5 +29,5 @@
 .home_item{
     left: 0;
     position: absolute;
-    color: red;
+    color: #fff;
 }
