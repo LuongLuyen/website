@@ -63,7 +63,7 @@ function Content() {
                             alt={item.title}
                             />
                             <div className='product_item'>
-                                <spam>{item.video}</spam>
+                                <spam>{item.title}</spam>
                             </div>
                         </div>
                     ))}

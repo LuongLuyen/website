@@ -17,40 +17,40 @@ export const data = [
     },
     {
         id:3,
-        title:'hanhdong',
+        title:'hoathinh',
         img:img,
         video:video1
     },
    
     {
         id:4,
-        title:'phieuluu',
+        title:'kungfu',
         img:img,
         video:video2
     },
     {
         id:5,
-        title:'hanhdong',
+        title:'kinhdi',
         img:img,
         video:video1
     },
    
     {
         id:6,
-        title:'phieuluu',
+        title:'kinhdi',
         img:img,
         video:video2
     },
     {
         id:7,
-        title:'hanhdong',
+        title:'kungfu',
         img:img,
         video:video1
     },
    
     {
         id:8,
-        title:'phieuluu',
+        title:'kinhdi',
         img:img,
         video:video2
     },

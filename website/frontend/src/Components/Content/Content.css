@@ -64,13 +64,13 @@
     width: 100%;
 }
 .product_film{
-    width: 20%;
     margin: 20px;
     background-color: #fff;
     border: solid #fff;
     border-radius: 5px;
 }
 .product_wrap{
+    height: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
