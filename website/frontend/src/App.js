@@ -4,7 +4,7 @@ import Content from './Components/Content/Content.js'
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/content' element={<Content/>} />

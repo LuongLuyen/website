@@ -44,14 +44,16 @@ function Home() {
                         <Link className='home-to-content' to='/content'>XEM NGAY</Link>
                     </div>
                 </div>
-                <div className='trailer_wrap'>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
-                    <img className='trailer_item' src={imgTrailer} alt='/'/>
+                <div>
+                    <Link className='trailer_wrap' to='/content'>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                        <img className='trailer_item' src={imgTrailer} alt='/'/>
+                    </Link>
                 </div>
             </div>
         </div>
