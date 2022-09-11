@@ -35,50 +35,6 @@ export const data = [
         video:video1
     },
    
-    {
-        id:6,
-        title:'kinhdi',
-        img:img,
-        video:video2
-    },
-    {
-        id:7,
-        title:'kungfu',
-        img:img,
-        video:video1
-    },
-   
-    {
-        id:8,
-        title:'kinhdi',
-        img:img,
-        video:video2
-    },
-    {
-        id:9,
-        title:'hanhdong',
-        img:img,
-        video:video1
-    },
-   
-    {
-        id:10,
-        title:'phieuluu',
-        img:img,
-        video:video2
-    },
-    {
-        id:11,
-        title:'hanhdong',
-        img:img,
-        video:video1
-    },
-   
-    {
-        id:12,
-        title:'phieuluu',
-        img:img,
-        video:video2
-    },
+  
      
 ]

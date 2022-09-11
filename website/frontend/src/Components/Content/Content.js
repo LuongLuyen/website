@@ -5,7 +5,9 @@ import './Content.css'
 function Content() {
     const [show,setShow] =useState(false)
     const [product,setProduct] = useState(data)
-    //loc ten phim
+    const [video,setVideo] = useState(data)
+    console.log(product)
+    //filter film
     const filterFilm = (title)=>{
         setProduct(
             data.filter((item) => {
@@ -13,13 +15,21 @@ function Content() {
             })
         )
     }
-    //mounted content video
+    // play content video
+    const filterVideo = (id)=>{
+        console.log(id)
+        setVideo(
+            data.filter((item) => {
+                return item.id === id
+            })
+        )
+    }
+    //mount content video
     const mountVideo=()=>{
         setShow(()=>{
             return true
         })
     }
-
     return ( 
         <div className='app'>
             <div className='header'>
@@ -28,8 +38,8 @@ function Content() {
                         <h1>Phim Bờ Rồ</h1>
                     </div>
                     <div className='header_user'>
-                        <spam>Thông báo</spam>
-                        <spam>Trợ giúp</spam>
+                        <span>Thông báo</span>
+                        <span>Trợ giúp</span>
                         <img src="Avt" alt='/'/>
                     </div>
                 </div>
@@ -51,19 +61,23 @@ function Content() {
                 </div>
             </div>
             <div className='product'>
-                {show && <Video />}
+                {show && <Video value = {video}/>}
                 <div className='product_wrap'>
-                    {product.map((item,index) =>(
-                        <div className='product_film'>
+                    {product.map((item) =>(
+                        <div 
+                        key={item.id}
+                        onClick={()=>filterVideo(item.id)}
+                        className='product_film'>
                             <img 
-                            key={index}
                             onClick={()=>mountVideo()} 
                             className='product_img' 
                             src={item.img} 
                             alt={item.title}
                             />
                             <div className='product_item'>
-                                <spam>{item.title}</spam>
+                                <span >
+                                    {item.title}
+                                </span>
                             </div>
                         </div>
                     ))}

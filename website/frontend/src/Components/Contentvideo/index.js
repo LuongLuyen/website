@@ -1,14 +1,18 @@
-import video from '../../data/video/v1.mp4'
-function Video() {
+function Video(value) {
+    const dataVideo= value.value
+    console.log(dataVideo)
     return ( 
         <div className='product_video'>
-                <video
+            {dataVideo.map((item)=>(
+                <video key={item.id}
                 className='product_video-item'
-                src={video} type='video/mp4'
+                src={item.video} type='video/mp4'
                 controls
                 />
+            ))}
         </div>
     )
 }
+
 
 export default Video;

@@ -19,8 +19,8 @@ function Home() {
                         <h1>HOME</h1>
                     </div>
                     <div className='home_user'>
-                        <spam>Đăng kí</spam>
-                        <spam>Đăng nhập</spam>
+                        <span>Đăng kí</span>
+                        <span>Đăng nhập</span>
                     </div>
                 </div>
                 <div className='home_content'>
