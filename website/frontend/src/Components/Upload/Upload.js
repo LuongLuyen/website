@@ -9,6 +9,13 @@ function Upload() {
     const [title,setTitle]=useState('')
     const [content,setContent]=useState('')
     const handleSubmit =()=>{
+        axios.post(url, {title,content})
+        .then((res)=>{
+        console.log(res)
+        })
+        .catch((err)=>{
+        console.log(err)
+        })
         console.log({title,content})
     }
 
@@ -31,15 +38,6 @@ function Upload() {
         file.preview=URL.createObjectURL(file)
         setVideo(file)
     }         
-    useEffect(()=>{
-        axios.post(url, {})
-            .then((res)=>{
-            console.log(res)
-            })
-            .catch((err)=>{
-            console.log(err)
-            })
-    },[])
     return ( 
         <div className='upload_wrap'>
             <form onSubmit={e=>{
