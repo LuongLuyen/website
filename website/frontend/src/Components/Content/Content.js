@@ -1,5 +1,7 @@
+import Avt from '../../data/img/1.jpg'
 import{data} from '../../data'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Video from '../Contentvideo'
 import './Content.css'
 function Content() {
@@ -35,12 +37,14 @@ function Content() {
             <div className='header'>
                 <div className='header_home'>
                     <div className='header_title'>
-                        <h1>Phim Bờ Rồ</h1>
+                        <h1>Phim BờRồ</h1>
                     </div>
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <img src="Avt" alt='/'/>
+                        <Link to='/content/upload'>
+                            <img className='header_avt' src={Avt} alt='/'/>
+                        </Link>
                     </div>
                 </div>
                 <div className='header_search'>
@@ -61,7 +65,7 @@ function Content() {
                 </div>
             </div>
             <div className='product'>
-                {show && <Video value = {video}/>}
+                {show && <Video value={video}/>}
                 <div className='product_wrap'>
                     {product.map((item) =>(
                         <div 
