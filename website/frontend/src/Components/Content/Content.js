@@ -1,14 +1,15 @@
 import Avt from '../../data/img/1.jpg'
-import{data} from '../../data'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Video from '../Contentvideo'
+
 import './Content.css'
-function Content() {
+function Content(props) {
+    const data= props.props
+    console.log('data',props.props)
     const [show,setShow] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
-    console.log(product)
     //filter film
     const filterFilm = (title)=>{
         setProduct(
@@ -18,11 +19,11 @@ function Content() {
         )
     }
     // play content video
-    const filterVideo = (id)=>{
-        console.log(id)
+    const filterVideo = (_id)=>{
+        console.log(_id)
         setVideo(
             data.filter((item) => {
-                return item.id === id
+                return item._id === _id
             })
         )
     }
@@ -67,10 +68,10 @@ function Content() {
             <div className='product'>
                 {show && <Video value={video}/>}
                 <div className='product_wrap'>
-                    {product.map((item) =>(
+                    {product.map((item,index) =>(
                         <div 
-                        key={item.id}
-                        onClick={()=>filterVideo(item.id)}
+                        key={index}
+                        onClick={()=>filterVideo(item._id)}
                         className='product_film'>
                             <img 
                             onClick={()=>mountVideo()} 

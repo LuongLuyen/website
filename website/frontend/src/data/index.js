@@ -34,58 +34,5 @@ export const data = [
         img:img,
         video:video1
     },
-    {
-        id:6,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:7,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:8,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:9,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:10,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:11,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:12,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:13,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },
-    {
-        id:14,
-        title:'kinhdi',
-        img:img,
-        video:video1
-    },    
+   
 ]

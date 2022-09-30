@@ -8,7 +8,7 @@ function Upload() {
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')
-    const [content,setContent]=useState('')
+    const [video,setVideo]=useState('')
     useEffect(()=>{
         //xóa img video củ khỏi bộ nhớ khi set img video mới
         return ()=>{
@@ -23,14 +23,14 @@ function Upload() {
         setUpload(file)
     }
     const handleSubmit =()=>{
-        axios.post(urladd, {name,title,content})
+        axios.post(urladd, {name,title,video})
         .then((res)=>{
         console.log(res)
         })
         .catch((err)=>{
         console.log(err)
         })
-        console.log({name,title,content})
+        console.log({name,title,video})
     }
     return ( 
         <div className='upload_wrap'>
@@ -67,8 +67,8 @@ function Upload() {
                     <input 
                     className='upload_item'  
                     type="text"
-                    value={content}
-                    onChange={e=> setContent(e.target.value)}
+                    value={video}
+                    onChange={e=> setVideo(e.target.value)}
                     />
                 </div>
             </form>
