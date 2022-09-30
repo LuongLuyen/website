@@ -6,6 +6,7 @@ function Upload() {
     const urlupload='http://localhost:5000/api/posts/upload'
     const urladd='http://localhost:5000/api/posts/add'
     const [upload,setUpload]=useState()
+    const [name,setName]=useState('')
     const [title,setTitle]=useState('')
     const [content,setContent]=useState('')
     useEffect(()=>{
@@ -22,14 +23,14 @@ function Upload() {
         setUpload(file)
     }
     const handleSubmit =()=>{
-        axios.post(urladd, {title,content})
+        axios.post(urladd, {name,title,content})
         .then((res)=>{
         console.log(res)
         })
         .catch((err)=>{
         console.log(err)
         })
-        console.log({title,content})
+        console.log({name,title,content})
     }
     return ( 
         <div className='upload_wrap'>
@@ -46,22 +47,32 @@ function Upload() {
                     className='upload_item'  
                     placeholder="Nhập tên phim"
                     type="text"
+                    value={name}
+                    onChange={e=> setName(e.target.value)}
+                    />
+                </div>
+             
+                <div className='upload' >
+                    <label className='upload_title'>Tên Film</label>
+                    <input 
+                    className='upload_item'  
+                    placeholder="hanhdong,phieulu,hoathinh,kungfu,kinhdi"
+                    type="text"
                     value={title}
                     onChange={e=> setTitle(e.target.value)}
                     />
                 </div>
                 <div className='upload' >
-                    <label className='upload_title'>content</label>
+                    <label className='upload_title'>Tên file</label>
                     <input 
                     className='upload_item'  
-                    placeholder="content"
                     type="text"
                     value={content}
                     onChange={e=> setContent(e.target.value)}
                     />
                 </div>
             </form>
-            <form action={urlupload} method='POST' enctype="multipart/form-data">
+            <form action={urlupload} method='POST' encType="multipart/form-data">
                     <div className='upload' >
                         <label className='upload_title' >Ảnh</label>
                         <input className='upload_item-file'name='file' onChange={handleUpload} type="file"/>
