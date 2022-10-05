@@ -2,14 +2,15 @@ import Avt from '../../data/img/1.jpg'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Video from '../Contentvideo'
-
 import './Content.css'
 function Content(props) {
-    const data= props.props
-    console.log('data',props.props)
+    const data =props.props
+    console.log(data)
+    
     const [show,setShow] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
+
     //filter film
     const filterFilm = (title)=>{
         setProduct(

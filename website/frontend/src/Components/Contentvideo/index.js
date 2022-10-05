@@ -4,7 +4,7 @@ function Video(value) {
     return ( 
         <div className='product_video'>
             {dataVideo.map((item)=>(
-                <video key={item.id}
+                <video key={item._id}
                 className='product_video-item'
                 src={item.video} type='video/mp4'
                 controls

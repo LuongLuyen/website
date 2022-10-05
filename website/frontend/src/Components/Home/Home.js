@@ -27,15 +27,15 @@ function Home() {
                     <h1>Trailer Film</h1>
                 </div>
                 <div className='home_item'>
-                    <p>
+                    <p className='home_item-list'>
                     YASUO KẺ BẤT DUNG THỨ YASUO KẺ BẤT DUNG THỨ
                     </p>
-                    <p>
+                    <p className='home_item-list'>
                     Khi còn nhỏ, Yasuo thường tin vào điều những người trong làng đồn đại về mình:
                     trường hợp tốt nhất, sự tồn tại của anh là sơ suất của thần linh;
                     trường hợp xấu nhất, anh là sai lầm không thể cứu vãn
                     </p>
-                    <p>
+                    <p className='home_item-list'>
                     Khi còn nhỏ, Yasuo thường tin vào điều những người trong làng đồn đại về mình:
                     trường hợp tốt nhất, sự tồn tại của anh là sơ suất của thần linh;
                     trường hợp xấu nhất, anh là sai lầm không thể cứu vãn

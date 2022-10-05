@@ -77,8 +77,8 @@ function Upload() {
                         <label className='upload_title' >Ảnh</label>
                         <input className='upload_item-file'name='file' onChange={handleUpload} type="file"/>
                         <div>
-                            {upload && (<img src={upload.preview} alt=''/>)}
-                            {upload && (<video src={upload.preview} />)}
+                            {upload && (<img className='upload_img' src={upload.preview} alt=''/>)}
+                            {upload && (<video className='upload_video' src={upload.preview} />)}
                         </div>
                     </div>
                 <div>
