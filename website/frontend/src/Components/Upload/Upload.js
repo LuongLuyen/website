@@ -56,7 +56,7 @@ function Upload() {
                     <label className='upload_title'>Tên Film</label>
                     <input 
                     className='upload_item'  
-                    placeholder="hanhdong,phieulu,hoathinh,kungfu,kinhdi"
+                    placeholder="hanhdong,phieuluu,hoathinh,kungfu,kinhdi"
                     type="text"
                     value={title}
                     onChange={e=> setTitle(e.target.value)}

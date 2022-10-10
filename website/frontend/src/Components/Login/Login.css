@@ -1,0 +1,31 @@
+.login{
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+.login_title{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    color: red;
+}
+.login_wrap{
+    margin: 0 500px 0 500px;
+}
+.login_input{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+.login_name{
+    font-size: 2rem;
+    color: red;
+}
+.login_button{
+    border-radius: 999px;
+    font-size: 2rem;
+    margin-top: 20px;
+    background-color: red;
+    color: #fff;
+}
