@@ -8,7 +8,6 @@ function Upload() {
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')
-    // const [video,setVideo]=useState('')
     const [fileName,setFileName]=useState('')
     useEffect(()=>{
         //xóa img video (file) củ khỏi bộ nhớ khi set img video mới 
@@ -65,15 +64,6 @@ function Upload() {
                     onChange={e=> setTitle(e.target.value)}
                     />
                 </div>
-                {/* <div className='upload' >
-                    <label className='upload_title'>Tên file</label>
-                    <input 
-                    className='upload_item'  
-                    type="text"
-                    value={video}
-                    onChange={e=> setVideo(e.target.value)}
-                    />
-                </div> */}
             </form>
             <form action={urlupload} method='POST' encType="multipart/form-data">
                     <div className='upload' >
