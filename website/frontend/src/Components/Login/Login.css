@@ -29,3 +29,28 @@
     background-color: red;
     color: #fff;
 }
+
+
+/* responsive
+/* Mobile: width < 740px = 46.1875em */
+@media (max-width: 46.1875em) {
+    .login_wrap{
+        margin: 0 5px 0 5px;
+    }
+    .login_name{
+        font-size: 1.5rem;
+    }
+
+
+}
+/* Tablet: width >= 740px and width <1024px  */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .login_wrap{
+        margin: 0 100px 0 100px;
+    }
+    .login_input{
+        height: 50px;
+        font-size: 2rem;
+    }
+
+}

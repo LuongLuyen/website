@@ -44,7 +44,7 @@ function Content(props) {
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <Link to='/content/login/upload'>
+                        <Link to='/content/login'>
                             <img className='header_avt' src={Avt} alt='/'/>
                         </Link>
                     </div>

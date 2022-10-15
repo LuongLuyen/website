@@ -1,16 +1,18 @@
 import './Login.css'
 function Login() {
+    const url ='http://localhost:5000/api/posts/add'
     return (
         <div className='login'>
             <div className='login_title'>
                 <h1>Login</h1>
             </div>
             <div>
-                <form>
+                <form method='POST' action={url}>
                     <div className='login_wrap'>
                         <label className='login_name'>Tên đăng nhập</label>
                         <input
                         className='login_input'
+                        name='username'
                         type='text'
                         placeholder='username'
                         />
@@ -19,6 +21,7 @@ function Login() {
                         <label className='login_name'>Mật Khẩu</label>
                         <input
                         className='login_input'
+                        name='password'
                         type='text'
                         placeholder='password'
                         />

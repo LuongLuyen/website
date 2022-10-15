@@ -8,9 +8,10 @@ function Upload() {
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')
-    const [video,setVideo]=useState('')
+    // const [video,setVideo]=useState('')
+    const [fileName,setFileName]=useState('')
     useEffect(()=>{
-        //xóa img video củ khỏi bộ nhớ khi set img video mới
+        //xóa img video (file) củ khỏi bộ nhớ khi set img video mới 
         return ()=>{
             //lần đầu img và video là undefined
             upload && URL.revokeObjectURL(upload.preview)
@@ -19,18 +20,20 @@ function Upload() {
     const handleUpload= (e)=>{
         const file = e.target.files[0]
         console.log(file)
+        // lấy filename
+        setFileName(file.name)
         file.preview=URL.createObjectURL(file)
         setUpload(file)
     }
     const handleSubmit =()=>{
-        axios.post(urladd, {name,title,video})
+        axios.post(urladd, {name,title,fileName})
         .then((res)=>{
         console.log(res)
         })
         .catch((err)=>{
         console.log(err)
         })
-        console.log({name,title,video})
+        console.log({name,title,fileName})
     }
     return ( 
         <div className='upload_wrap'>
@@ -62,7 +65,7 @@ function Upload() {
                     onChange={e=> setTitle(e.target.value)}
                     />
                 </div>
-                <div className='upload' >
+                {/* <div className='upload' >
                     <label className='upload_title'>Tên file</label>
                     <input 
                     className='upload_item'  
@@ -70,7 +73,7 @@ function Upload() {
                     value={video}
                     onChange={e=> setVideo(e.target.value)}
                     />
-                </div>
+                </div> */}
             </form>
             <form action={urlupload} method='POST' encType="multipart/form-data">
                     <div className='upload' >
