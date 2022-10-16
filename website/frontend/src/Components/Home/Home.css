@@ -88,13 +88,13 @@
         display: none;
     }
     .home{
-        background-color: #1c1c1c;
+        background-color: #a6a2a1;
     }
 }
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .home{
-        background-color: #1c1c1c;
+        background-color: #a6a2a1;
     }
     .trailer_wrap{
         display: none;

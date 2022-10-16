@@ -14,7 +14,7 @@ function Login() {
                         className='login_input'
                         name='username'
                         type='text'
-                        placeholder='username'
+                        placeholder='Username:   admin123'
                         />
                     </div>
                     <div className='login_wrap'>
@@ -23,7 +23,7 @@ function Login() {
                         className='login_input'
                         name='password'
                         type='text'
-                        placeholder='password'
+                        placeholder='Password:   admin123'
                         />
                     </div>
                     <div className='login_wrap'>

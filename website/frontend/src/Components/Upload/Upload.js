@@ -58,7 +58,10 @@ function Upload() {
 
                 <div className='upload'>
                     <label className='upload_title'>Thể loại phim</label>
-                        <select  onChange={e=> setTitle(e.target.value)} className='upload_item'>
+                        <select  
+                        onChange={e=> setTitle(e.target.value)} 
+                        className='upload_item' 
+                        htmlFor="lang-select">
                             <option value="">--Chọn thể loại phim--</option>
                             <option value="hanhdong">----Hành động----</option>
                             <option value="phieuluu">----Phiêu lưu----</option>
@@ -67,21 +70,10 @@ function Upload() {
                             <option value="kinhdi">----Kinh dị----</option>
                         </select>
                 </div>
-             
-                {/* <div className='upload' >
-                    <label className='upload_title'>Tên Film</label>
-                    <input 
-                    className='upload_item'  
-                    placeholder="hanhdong,phieuluu,hoathinh,kungfu,kinhdi"
-                    type="text"
-                    value={title}
-                    onChange={e=> setTitle(e.target.value)}
-                    />
-                </div> */}
             </form>
             <form action={urlupload} method='POST' encType="multipart/form-data">
                     <div className='upload' >
-                        <label className='upload_title' >Ảnh</label>
+                        <label className='upload_title' >Thêm Video</label>
                         <input className='upload_item-file'name='file' onChange={handleUpload} type="file"/>
                         <div>
                             {upload && (<img className='upload_img' src={upload.preview} alt=''/>)}

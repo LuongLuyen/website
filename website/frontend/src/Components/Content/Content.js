@@ -1,4 +1,3 @@
-import Avt from '../../data/img/1.jpg'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Video from '../Contentvideo'
@@ -44,8 +43,8 @@ function Content(props) {
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <Link to='/content/login'>
-                            <img className='header_avt' src={Avt} alt='/'/>
+                        <Link className='dangnhap' to='/content/login'>
+                            Đăng nhập
                         </Link>
                     </div>
                 </div>
