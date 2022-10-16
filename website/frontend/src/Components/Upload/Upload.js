@@ -9,6 +9,7 @@ function Upload() {
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')
     const [fileName,setFileName]=useState('')
+
     useEffect(()=>{
         //xóa img video (file) củ khỏi bộ nhớ khi set img video mới 
         return ()=>{
@@ -16,6 +17,7 @@ function Upload() {
             upload && URL.revokeObjectURL(upload.preview)
         }
     },[upload])
+    // xem trước (img video)
     const handleUpload= (e)=>{
         const file = e.target.files[0]
         console.log(file)
@@ -53,8 +55,20 @@ function Upload() {
                     onChange={e=> setName(e.target.value)}
                     />
                 </div>
+
+                <div className='upload'>
+                    <label className='upload_title'>Thể loại phim</label>
+                        <select  onChange={e=> setTitle(e.target.value)} className='upload_item'>
+                            <option value="">--Chọn thể loại phim--</option>
+                            <option value="hanhdong">----Hành động----</option>
+                            <option value="phieuluu">----Phiêu lưu----</option>
+                            <option value="hoathinh">----Hoạt hình----</option>
+                            <option value="kungfu">----Kungfu----</option>
+                            <option value="kinhdi">----Kinh dị----</option>
+                        </select>
+                </div>
              
-                <div className='upload' >
+                {/* <div className='upload' >
                     <label className='upload_title'>Tên Film</label>
                     <input 
                     className='upload_item'  
@@ -63,7 +77,7 @@ function Upload() {
                     value={title}
                     onChange={e=> setTitle(e.target.value)}
                     />
-                </div>
+                </div> */}
             </form>
             <form action={urlupload} method='POST' encType="multipart/form-data">
                     <div className='upload' >
