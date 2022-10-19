@@ -1,6 +1,6 @@
 import './Login.css'
 function Login() {
-    const url ='https://luongluyen-film-server.herokuapp.com//api/posts/add'
+    const url ='https://luongluyen-film-server.herokuapp.com/api/posts/add'
     return (
         <div className='login'>
             <div className='login_title'>
