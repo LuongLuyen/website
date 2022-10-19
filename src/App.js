@@ -10,7 +10,7 @@ function App() {
   // get api
   const [data, setData] = useState(null)
   useEffect(() => {
-      axios.get(`https://luongluyen-film-server.herokuapp.com//api/posts/film`)
+      axios.get(`https://luongluyen-film-server.herokuapp.com/api/posts/film`)
       .then((response) => {
           setData(response.data)
       })
