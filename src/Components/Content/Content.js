@@ -4,23 +4,12 @@ import Video from '../Contentvideo'
 import './Content.css'
 function Content(props) {
     const data =props.props
-    // console.log(data)
+    console.log(data)
     
     const [show,setShow] =useState(false)
-    const [dataSearch,setDataSearch] =useState({})
-    console.log(dataSearch)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
-    const [search,setSearch] = useState("")
-
-    const handleSearch=(e)=>{
-        if (e.keyCode===13){
-            console.log('true')
-            // data.map((item)=>(
-            //     setDataSearch('ok')
-            // ))
-        }
-    }
+    
     //scrollTop
     const refTop = useRef(null)
     const handleClick = ()=>{
@@ -69,9 +58,6 @@ function Content(props) {
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'
-                    value={search}
-                    onChange={e=> setSearch(e.target.value)}
-                    onKeyDown={handleSearch}
                     />
                 </div>
                 <div className='header_category'>
