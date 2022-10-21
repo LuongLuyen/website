@@ -1,15 +1,31 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Video from '../Contentvideo'
 import './Content.css'
 function Content(props) {
     const data =props.props
-    console.log(data)
+    // console.log(data)
     
     const [show,setShow] =useState(false)
+    const [dataSearch,setDataSearch] =useState({})
+    console.log(dataSearch)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
+    const [search,setSearch] = useState("")
 
+    const handleSearch=(e)=>{
+        if (e.keyCode===13){
+            console.log('true')
+            // data.map((item)=>(
+            //     setDataSearch('ok')
+            // ))
+        }
+    }
+    //scrollTop
+    const refTop = useRef(null)
+    const handleClick = ()=>{
+        refTop.current?.scrollIntoView({behavior: 'smooth'})
+    }
     //filter film
     const filterFilm = (title)=>{
         setProduct(
@@ -35,7 +51,7 @@ function Content(props) {
     }
     return ( 
         <div className='app'>
-            <div className='header'>
+            <div ref={refTop} className='header'>
                 <div className='header_home'>
                     <div className='header_title'>
                         <h1>Phim BờRồ</h1>
@@ -53,6 +69,9 @@ function Content(props) {
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'
+                    value={search}
+                    onChange={e=> setSearch(e.target.value)}
+                    onKeyDown={handleSearch}
                     />
                 </div>
                 <div className='header_category'>
@@ -67,7 +86,7 @@ function Content(props) {
             </div>
             <div className='product'>
                 {show && <Video value={video}/>}
-                <div className='product_wrap'>
+                <div onClick={handleClick} className='product_wrap'>
                     {product.map((item,index) =>(
                         <div 
                         key={index}
@@ -80,7 +99,7 @@ function Content(props) {
                             alt={item.title}
                             />
                             <div className='product_item'>
-                                <span >
+                                <span>
                                     {item.title}
                                 </span>
                             </div>
