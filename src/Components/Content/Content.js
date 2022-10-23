@@ -5,16 +5,41 @@ import './Content.css'
 function Content(props) {
     const data =props.props
     console.log(data)
-    
+
     const [show,setShow] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
-    
+    const [inputText, setInputText] = useState("")
+
+    //thanh search
+    const inputHandler = (e) => {
+        const lowerCase = e.target.value.toLowerCase()
+        setInputText(lowerCase)
+    }
+    const filterData = data.filter((prevData) => {   
+        if (inputText === '') {
+            return prevData
+        }
+        else {
+            return prevData.title.toLowerCase().includes(inputText)
+        }
+    })
+    console.log(filterData)
+    const handleSearch = ()=>{
+        setProduct(filterData)
+    }
+    const handleEnter= function(e){
+        if(e.keyCode===13){
+            handleSearch()
+        }
+    }
+
     //scrollTop
     const refTop = useRef(null)
     const handleClick = ()=>{
         refTop.current?.scrollIntoView({behavior: 'smooth'})
     }
+
     //filter film
     const filterFilm = (title)=>{
         setProduct(
@@ -23,6 +48,7 @@ function Content(props) {
             })
         )
     }
+
     // play content video
     const filterVideo = (_id)=>{
         console.log(_id)
@@ -32,6 +58,7 @@ function Content(props) {
             })
         )
     }
+
     //mount content video
     const mountVideo=()=>{
         setShow(()=>{
@@ -58,6 +85,8 @@ function Content(props) {
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'
+                    onChange={inputHandler} 
+                    onKeyDown={handleEnter}
                     />
                 </div>
                 <div className='header_category'>
