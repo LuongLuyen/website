@@ -76,7 +76,7 @@ function Content(props) {
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <Link className='dangnhap' to='/content/login'>
+                        <Link className='dangnhap' to='/login'>
                             Đăng nhập
                         </Link>
                     </div>
