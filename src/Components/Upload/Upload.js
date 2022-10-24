@@ -63,11 +63,11 @@ function Upload() {
                         className='upload_item' 
                         htmlFor="lang-select">
                             <option value="">--Chọn thể loại phim--</option>
-                            <option value="hanhdong">----Hành động----</option>
-                            <option value="phieuluu">----Phiêu lưu----</option>
-                            <option value="hoathinh">----Hoạt hình----</option>
-                            <option value="kungfu">----Kungfu----</option>
-                            <option value="kinhdi">----Kinh dị----</option>
+                            <option value="Hành động">----Hành động----</option>
+                            <option value="Phiêu lưu">----Phiêu lưu----</option>
+                            <option value="Hoạt hình">----Hoạt hình----</option>
+                            <option value="Kung fu">----Kungfu----</option>
+                            <option value="Kinh dị">----Kinh dị----</option>
                         </select>
                 </div>
             </form>

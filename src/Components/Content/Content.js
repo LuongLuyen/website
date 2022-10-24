@@ -15,6 +15,7 @@ function Content(props) {
     const inputHandler = (e) => {
         const lowerCase = e.target.value.toLowerCase()
         setInputText(lowerCase)
+        console.log(lowerCase)
     }
     const filterData = data.filter((prevData) => {   
         if (inputText === '') {

@@ -19,7 +19,7 @@ function App() {
   console.log(data)
   return (
     <Router>
-      <div className='react_app'>
+      <div>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/content' element={<Content props={data}/>} />
