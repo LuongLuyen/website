@@ -17,10 +17,17 @@
     margin: 0 100px 0 100px;
 
 }
-.home_user{
+.user{
     display: flex;
-    justify-content: space-evenly;
-    width: 300px;
+    justify-content: center;
+}
+.home_user{
+    text-decoration: none;
+    width: 100px;
+    height: 24px;
+    color: red;
+    font-weight: 700;
+    font-size: 1.2rem;
 }
 .home_content{
     font-size: 2.3rem;

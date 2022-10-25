@@ -92,11 +92,11 @@ function Content(props) {
                 </div>
                 <div className='header_category'>
                     <div className='header_list'>
-                        <button onClick={()=>filterFilm('hanhdong')} className='header_list-item'>Hành động</button>
-                        <button onClick={()=>filterFilm('phieuluu')} className='header_list-item'>Phiêu lưu</button>
-                        <button onClick={()=>filterFilm('hoathinh')} className='header_list-item'>Hoạt hình</button>
-                        <button onClick={()=>filterFilm('kungfu')} className='header_list-item'>Kungfu</button>
-                        <button onClick={()=>filterFilm('kinhdi')} className='header_list-item'>Kinh dị</button>
+                        <button onClick={()=>filterFilm('Hành động')} className='header_list-item'>Hành động</button>
+                        <button onClick={()=>filterFilm('Phiêu lưu')} className='header_list-item'>Phiêu lưu</button>
+                        <button onClick={()=>filterFilm('Hoạt hình')} className='header_list-item'>Hoạt hình</button>
+                        <button onClick={()=>filterFilm('Kung fu')} className='header_list-item'>Kungfu</button>
+                        <button onClick={()=>filterFilm('Kinh dị')} className='header_list-item'>Kinh dị</button>
                     </div>
                 </div>
             </div>

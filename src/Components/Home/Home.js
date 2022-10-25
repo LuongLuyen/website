@@ -18,9 +18,9 @@ function Home() {
                     <div>
                         <h1>HOME</h1>
                     </div>
-                    <div className='home_user'>
-                        <span>Đăng kí</span>
-                        <span>Đăng nhập</span>
+                    <div className='user'>
+                        <Link className='home_user' to='/register'>Đăng ký</Link>
+                        <Link className='home_user' to='/login'>Đăng nhập</Link>
                     </div>
                 </div>
                 <div className='home_content'>

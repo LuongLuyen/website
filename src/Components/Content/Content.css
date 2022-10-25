@@ -6,7 +6,9 @@
     background-color: black; 
 }
 .header_title{
+    text-decoration: none;
     font-size: 80%;
+    color: crimson;
 }
 .header_home{
     display: flex;
