@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './Login.css'
 
 function Login() {
-    const url ='https://luongluyen-film-server.herokuapp.com/api/posts/add'
+    const url ='https://server-97i3.onrender.com/api/posts/add'
     return (
         <div className='login'>
             <div className='header_home'>

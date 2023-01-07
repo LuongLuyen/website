@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import '../Login/Login.css'
 function Register() {
-    const url='https://server-97i3.onrender.com//api/posts/register'
+    const url='https://server-97i3.onrender.com/api/posts/register'
     return ( 
         <div className='login'>
             <div className='header_home'>
