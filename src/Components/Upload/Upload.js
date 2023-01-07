@@ -3,8 +3,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import './Upload.css'
 function Upload() {
-    const urlupload='https://luongluyen-film-server.herokuapp.com//api/posts/upload'
-    const urladd='https://luongluyen-film-server.herokuapp.com//api/posts/add'
+    const urlupload='https://server-97i3.onrender.com/api/posts/upload'
+    const urladd='https://server-97i3.onrender.com/api/posts/add'
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')

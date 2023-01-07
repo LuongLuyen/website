@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Video from '../Contentvideo'
+import Video from '../Contentvideo/Contentvideo'
 import './Content.css'
 function Content(props) {
     const data =props.props

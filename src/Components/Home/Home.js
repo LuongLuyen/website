@@ -1,5 +1,5 @@
-import bgVideo from '../../data/video/v1.mp4'
-import imgTrailer from '../../data/img/trailer.jpg'
+import bgVideo from '../../assets/video/v1.mp4'
+import imgTrailer from '../../assets/img/trailer.jpg'
 import { Link } from 'react-router-dom'
 import './Home.css'
 function Home() {

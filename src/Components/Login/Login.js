@@ -33,7 +33,7 @@ function Login() {
                         placeholder='Password:   admin123'
                         />
                     </div>
-                    <div className='login_wrap'>
+                    <div className='login_submit'>
                         <button className='login_button' type='submit'>Submit</button>
                         <Link  to='/register'>
                             <button className='login_button'>Đăng ký</button>

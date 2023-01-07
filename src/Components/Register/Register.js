@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import '../Login/Login.css'
 function Register() {
-    const url='https://luongluyen-film-server.herokuapp.com/api/posts/register'
+    const url='https://server-97i3.onrender.com//api/posts/register'
     return ( 
         <div className='login'>
             <div className='header_home'>
@@ -34,7 +34,7 @@ function Register() {
                         placeholder='Password'
                         />
                     </div>
-                    <div className='login_wrap'>
+                    <div className='login_submit'>
                         <button className='login_button' type='submit'>Submit</button>
                         <Link  to='/login'>
                             <button className='login_button'>Đăng nhập</button>

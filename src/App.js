@@ -8,7 +8,7 @@ import {useEffect, useState } from 'react'
 import axios from 'axios'
 
 function App() {
-  // get api
+  //get api
   const [data, setData] = useState(null)
   useEffect(() => {
       axios.get(`https://luongluyen-film-server.herokuapp.com/api/posts/film`)
