@@ -1,5 +1,7 @@
 ### `Deploy`:
 https://client-97i3.netlify.app/
+### `frontend`: https://github.com/LuongLuyen/website
+### `backend` : https://github.com/LuongLuyen/website-api
 
 
 In the project directory, you can run:
