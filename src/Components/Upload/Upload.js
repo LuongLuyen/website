@@ -3,8 +3,8 @@ import { useState } from 'react'
 import axios from 'axios'
 import './Upload.css'
 function Upload() {
-    const urlupload='https://server-97i3.onrender.com/api/posts/upload'
-    const urladd='https://server-97i3.onrender.com/api/posts/add'
+    const urlupload=process.env.REACT_APP_URL_UPLOAD
+    const urladd= process.env.REACT_APP_URL_ADD
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [title,setTitle]=useState('')

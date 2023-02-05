@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import './Login.css'
 
 function Login() {
-    const url ='https://server-97i3.onrender.com/api/posts/add'
+    const url = process.env.REACT_APP_URL_LOGIN
     return (
         <div className='login'>
             <div className='header_home'>

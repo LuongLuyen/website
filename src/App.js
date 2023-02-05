@@ -11,7 +11,7 @@ function App() {
   //get api
   const [data, setData] = useState(null)
   useEffect(() => {
-      axios.get(`https://server-97i3.onrender.com/api/posts/film`)
+      axios.get(process.env.REACT_APP_URL_DATA)
       .then((response) => {
           setData(response.data)
       })
