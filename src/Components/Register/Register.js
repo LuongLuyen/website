@@ -30,15 +30,25 @@ function Register() {
                         <input
                         className='login_input'
                         name='password'
-                        type='text'
+                        type='password'
                         placeholder='Password'
                         />
                     </div>
                     <div className='login_submit'>
-                        <button className='login_button' type='submit'>Submit</button>
+                        <button className='login_button' type='submit'>Đăng ký</button>
+                    </div>
+                    <div className='login__1'>
+                        <span>Ghi nhớ tôi</span>
+                        <span>Bạn cần trợ giúp ?</span>
+                    </div>
+                    <div className='login__2'>
+                        <span>Bạn đã có tài khoản Film Bờ Rồ</span>
                         <Link  to='/login'>
-                            <button className='login_button'>Đăng nhập</button>
+                            <button>Đăng nhập</button>
                         </Link>
+                    </div>
+                    <div className='login__2'>
+                        Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot. Tìm hiểu thêm.
                     </div>
                 </form>
             </div>

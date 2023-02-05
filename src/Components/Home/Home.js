@@ -28,17 +28,13 @@ function Home() {
                 </div>
                 <div className='home_item'>
                     <p className='home_item-list'>
-                    YASUO KẺ BẤT DUNG THỨ YASUO KẺ BẤT DUNG THỨ
+                    Chào mừng bạn quay lại!
                     </p>
                     <p className='home_item-list'>
-                    Khi còn nhỏ, Yasuo thường tin vào điều những người trong làng đồn đại về mình:
-                    trường hợp tốt nhất, sự tồn tại của anh là sơ suất của thần linh;
-                    trường hợp xấu nhất, anh là sai lầm không thể cứu vãn
+                    Chương trình truyền hình, phim không giới hạn và nhiều nội dung khác.
                     </p>
                     <p className='home_item-list'>
-                    Khi còn nhỏ, Yasuo thường tin vào điều những người trong làng đồn đại về mình:
-                    trường hợp tốt nhất, sự tồn tại của anh là sơ suất của thần linh;
-                    trường hợp xấu nhất, anh là sai lầm không thể cứu vãn
+                    Xem ở mọi nơi. Hủy bất kỳ lúc nào.
                     </p>
                     <div>
                         <Link className='home-to-content' to='/content'>XEM NGAY</Link>

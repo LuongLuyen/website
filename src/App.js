@@ -15,7 +15,7 @@ function App() {
       .then((response) => {
           setData(response.data)
       })
-  }, [])
+  }, []) 
   if (!data) return null
   console.log(data)
   return (

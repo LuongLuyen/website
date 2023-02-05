@@ -29,15 +29,25 @@ function Login() {
                         <input
                         className='login_input'
                         name='password'
-                        type='text'
+                        type='password'
                         placeholder='Password:   admin123'
                         />
                     </div>
                     <div className='login_submit'>
-                        <button className='login_button' type='submit'>Submit</button>
+                        <button className='login_button' type='submit'>Đăng nhập</button>
+                    </div>
+                    <div className='login__1'>
+                        <span>Ghi nhớ tôi</span>
+                        <span>Bạn cần trợ giúp ?</span>
+                    </div>
+                    <div className='login__2'>
+                        <span>Bạn mới tham gia Film Bờ Rồ</span>
                         <Link  to='/register'>
-                            <button className='login_button'>Đăng ký</button>
+                            <button>Đăng ký</button>
                         </Link>
+                    </div>
+                    <div className='login__2'>
+                        Trang này được Google reCAPTCHA bảo vệ để đảm bảo bạn không phải là robot. Tìm hiểu thêm.
                     </div>
                 </form>
             </div>
