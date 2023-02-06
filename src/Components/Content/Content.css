@@ -5,7 +5,7 @@
 .header{
     z-index: 1;
     width: 100%;
-    height: 18%;
+    height: 24%;
     position: fixed;
     background-color: black; 
 }
@@ -70,7 +70,7 @@
     
 }
 .product{
-    top: 160px;
+    top: 180px;
     position: relative;
     width: 100%;
     height: 100%;
@@ -140,13 +140,13 @@
         margin-left: 20px;
     }
     .product{
-        top: 170px;
+        top: 180px;
     }
 }
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .product{
-        top: 230px;
+        top: 300px;
     }
     .product_video-item{
         width: 90%;
