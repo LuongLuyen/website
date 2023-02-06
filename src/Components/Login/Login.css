@@ -57,6 +57,16 @@
     .login_name{
         font-size: 1.5rem;
     }
+    .login__1{
+        margin: 20px;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+    }
+    .login__2{
+        margin: 20px;
+        color: #fff;
+    }
 
 
 }
