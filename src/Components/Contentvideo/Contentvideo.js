@@ -11,11 +11,6 @@ function Video(value) {
                 controls
                 />
             ))}
-            <div className='chat'>
-                <div className='content_chat'>
-                    <span>chat</span>
-                </div>
-            </div>
         </div>
     )
 }

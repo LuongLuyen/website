@@ -14,7 +14,7 @@
     display: flex;
     color: red;
     justify-content: space-between;
-    margin: 0 100px 0 100px;
+    margin: 0 50px 0 50px;
 
 }
 
@@ -33,23 +33,26 @@
 .home_content{
     font-size: 2.3rem;
     color: red;
-    margin-left: 40px;
+    margin: 20px;
 }
+
 .home-to-content{
-    padding: 0 20px 0 20px;
-    border-radius: 9999px;
+    font-size: 3rem;
+    border-radius: 5px;
     background-color: aqua;
-    margin-left: 50px;
     text-decoration: none;
-    font-size: 200%;
     color: #fff;
+}
+.home_button{
+    display: flex;
+    justify-content: center;
 }
 .home-to-content:hover{
     background-color: red;
     border: solid #fff;
 }
 .home_item{
-    margin-left: 40px;
+    margin: 20px;
     left: 0;
     color: #fff;
 }
@@ -128,4 +131,19 @@
         display: none;
     }
  
+}
+
+@media (min-width: 97em) {
+    .home{
+        background-image: url("/src/assets/img/background.jpg");
+    }
+    .home_trailer{
+        display: none;
+    }
+    .trailer_wrap{
+        margin-top: 120px;
+    }
+    .home_item-list{
+        font-size: 2em;
+    }
 }

@@ -36,7 +36,7 @@ function Home() {
                     <p className='home_item-list'>
                     Xem ở mọi nơi. Hủy bất kỳ lúc nào.
                     </p>
-                    <div>
+                    <div className='home_button'>
                         <Link className='home-to-content' to='/content'>XEM NGAY</Link>
                     </div>
                 </div>

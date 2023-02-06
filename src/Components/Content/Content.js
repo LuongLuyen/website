@@ -123,6 +123,7 @@ function Content(props) {
                     ))}
                 </div>
             </div>
+            <button className='chat'>Messenger</button>
         </div>
     )
 }

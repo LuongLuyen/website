@@ -1,15 +1,16 @@
 .upload_wrap{
     width: 100%;
     height: 100vh;
-    background-color: aquamarine;
+    background-color: black;
 }
 .title{
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     color: red;
 }
 .upload{
-    margin: 20px 200px 20px 200px;
+    margin: 20px 400px 20px 400px;
 }
 
 .upload_item{
@@ -31,10 +32,10 @@
 }
 .button{
     background-color: red;
-    margin-left: 200px;
+    margin-left: 400px;
     font-size: 1.5rem;
     color: #fff;
-    border-radius: 9999px;
+    border-radius: 5px;
 }
 .upload_video,
 .upload_img{
@@ -47,10 +48,10 @@
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
     .upload{
-        margin: 20px 8px 20px 8px;
+        margin: 20px;
     }
     .button{
-        margin-left: 8px;
+        margin-left: 20px;
     }
     .upload_video,
     .upload_img{
@@ -61,7 +62,7 @@
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .upload{
-        margin: 20px;
+        margin: 20px 200px 20px 200px;
     }
     .upload_video,
     .upload_img{
@@ -69,10 +70,13 @@
     }
     .button{
         font-size: 2rem;
-        margin-left: 20px;
+        margin-left: 200px;
     }
     .upload_item{
         height: 50px;
+        font-size: 2rem;
+    }
+    .title{
         font-size: 2rem;
     }
   
