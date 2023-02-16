@@ -24,7 +24,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/content' element={<Content props={data}/>} />
+        <Route path='/content' element={<Content props={data} />} />
         <Route path='/content/upload' element={<Upload/>} />
       </Routes>
     </Router>

@@ -122,6 +122,20 @@
     border-radius: 9999px;
 }
 
+.user{
+    display: none;
+    z-index: 1;
+    height: 120px;
+    right: 10px;
+    border-radius: 5px;
+    border: solid #c5c2c2;
+    position: absolute;
+    background-color: #fff;
+}
+.user_item{
+    margin: 2px;
+    list-style: none;
+}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {

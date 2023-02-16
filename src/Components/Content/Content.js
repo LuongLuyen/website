@@ -83,6 +83,14 @@ function Content(props) {
                         <Link className='dangnhap' to='/login'>
                             Đăng nhập
                         </Link>
+                        <div className='user'>
+                            <ul>
+                                <li className='user_item'>Tên</li>
+                                <li className='user_item'>Cài đặt</li>
+                                <li className='user_item'>Trợ giúp</li>
+                                <li className='user_item'>Đăng xuất</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div className='header_search'>
