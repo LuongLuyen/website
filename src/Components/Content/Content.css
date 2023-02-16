@@ -112,17 +112,15 @@
     border: solid #fff;
     border-radius: 5px;
 }
-.chat{
-    height: 2rem;
-    right: 20px;
+.messenger{
+    z-index: 1;
+    font-size: 1.5rem;
+    right: 20px;;
     bottom: 20px;
     position: fixed;
-    color: #33ff00;
-    border-radius: 9999px;
     background-color: red;
-    border: solid #fff;
+    border-radius: 9999px;
 }
-
 
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
@@ -151,7 +149,7 @@
     .product_video-item{
         width: 90%;
     }
-    .chat{
+    .messenger{
         height: 4rem;
         font-size: 20px;
     }

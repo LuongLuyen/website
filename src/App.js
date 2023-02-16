@@ -20,15 +20,13 @@ function App() {
   console.log(data)
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/register' element={<Register />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/content' element={<Content props={data}/>} />
-          <Route path='/content/upload' element={<Upload/>} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/content' element={<Content props={data}/>} />
+        <Route path='/content/upload' element={<Upload/>} />
+      </Routes>
     </Router>
   );
 }

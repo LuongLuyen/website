@@ -5,14 +5,10 @@ import './Home.css'
 function Home() {
     return ( 
         <div className='home'>
-            <div>
-                <div>
-                    <video className='home_trailer'
-                    autoPlay loop muted
-                    src={bgVideo} type='video/mp4'
-                    />
-                </div>
-            </div>
+            <video className='home_trailer'
+            autoPlay loop muted
+            src={bgVideo} type='video/mp4'
+            />
             <div className='wrap'>
                 <div className='home_wrap'>
                     <div>

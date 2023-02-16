@@ -1,12 +1,14 @@
 import { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Video from '../Contentvideo/Contentvideo'
+import Video from './Contentvideo'
+import Chat from './Chat'
 import './Content.css'
 function Content(props) {
     const data =props.props
     console.log(data)
 
     const [show,setShow] =useState(false)
+    const [showChat,setShowChat] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
     const [inputText, setInputText] = useState("")
@@ -67,8 +69,10 @@ function Content(props) {
         })
     }
     return ( 
-        <div className='app'>
-            <div ref={refTop} className='header'>
+        <div ref={refTop} className='app'>
+            <div 
+            onClick={()=>setShowChat(false)}
+            className='header'>
                 <div className='header_home'>
                     <div className='header_title'>
                         <h1>Phim BờRồ</h1>
@@ -100,7 +104,9 @@ function Content(props) {
                     </div>
                 </div>
             </div>
-            <div className='product'>
+            <div 
+            onClick={()=>setShowChat(false)}
+            className='product'>
                 {show && <Video value={video}/>}
                 <div onClick={handleClick} className='product_wrap'>
                     {product.map((item,index) =>(
@@ -123,7 +129,15 @@ function Content(props) {
                     ))}
                 </div>
             </div>
-            <button className='chat'>Messenger</button>
+            <div>
+                {showChat && <Chat value ={showChat}/>}
+            </div>
+            <div  className='messenger'>
+            <div
+            onClick={()=>setShowChat(!showChat)}>
+                Messenger
+            </div>
+            </div>
         </div>
     )
 }

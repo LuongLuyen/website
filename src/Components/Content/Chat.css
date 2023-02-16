@@ -1,0 +1,26 @@
+.chat{
+    height: 100%;
+    width: 50%;
+    top: 24%;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #fff;
+    border: solid #333;
+}
+/* responsive
+/* Mobile: width < 740px = 46.1875em */
+@media (max-width: 46.1875em) {
+    .chat{
+        width: 100%;
+        top: 46%;
+    }
+
+}
+/* Tablet: width >= 740px and width <1024px  */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .chat{
+        width: 100%;
+        top: 62%;
+    }
+}
