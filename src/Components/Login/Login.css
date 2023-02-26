@@ -46,11 +46,20 @@
     margin: 20px 320px 20px 320px;
     color: #fff;
 }
-
+.login_check{
+    display: block;
+    color: #fff;
+    font-size: 10px;
+    margin: 0 20rem 0 20rem;
+}
 
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
+    .login_check{
+        width: 100%;
+        margin-left: 20px;
+    }
     .login_wrap{
         margin: 20px;
     }
@@ -72,6 +81,9 @@
 }
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
+    .login_check{
+        margin-left: 200px;
+    }
     .login_wrap{
         margin: 0 200px 0 200px;
     }

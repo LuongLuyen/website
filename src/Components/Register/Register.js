@@ -34,6 +34,10 @@ function Register() {
                         placeholder='Password'
                         />
                     </div>
+                    <div>
+                        <span className='login_check'>Tên tài khoản từ 6 đến 20 kí tự.</span>
+                        <span className='login_check'>Tên mật khẩu từ 6 đến 20 kí tự.</span>
+                    </div>
                     <div className='login_submit'>
                         <button className='login_button' type='submit'>Đăng ký</button>
                     </div>
