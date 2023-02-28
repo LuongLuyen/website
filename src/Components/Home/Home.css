@@ -37,7 +37,7 @@
 }
 
 .home-to-content{
-    font-size: 3rem;
+    font-size: 2rem;
     border-radius: 5px;
     background-color: aqua;
     text-decoration: none;
@@ -59,7 +59,7 @@
 .home_item-list{
     display: flex;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 800;
 }
 
