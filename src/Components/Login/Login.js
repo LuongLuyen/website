@@ -1,30 +1,19 @@
+import { useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import './Login.css'
-// import {useState} from 'react'
-// import axios from 'axios'
 
-
-function Login() {
-    // const [data, setData] = useState(null)
-    // const [input, setInput] = useState("")
+function Login(props) {
+    const [user,setUser]= useState("")
+    const inputHandler = (e) => {
+        const user = e.target.value
+        setUser(user)
+    }
     const url = process.env.REACT_APP_URL_LOGIN
-    // const urlAdmin=process.env.REACT_APP_URL_ADMIN
-    //get api
-    // const getApi =()=>{
-    //     axios.get(urlAdmin)
-    //     .then((response) => {
-    //         setData(response.data)
-    //     })
-    // }
-    // console.log('adnin',data)
-    // console.log('input',input)
-    // const inputHandler = (e) => {
-    //     const input = e.target.value
-    //     setInput(input)
-    //     if(input==="admin123"){
-    //         getApi()
-    //     }
-    // }
+
+    useEffect(()=>{
+        props.parentCallback(user)
+    })
+
     return (
         <div className='login'>
             <div className='header_home'>
@@ -42,11 +31,11 @@ function Login() {
                     <div className='login_wrap'>
                         <label className='login_name'>Tên đăng nhập</label>
                         <input
+                        onChange={inputHandler} 
                         className='login_input'
                         name='username'
                         type='text'
                         placeholder='Username:   admin123'
-                        // onChange={inputHandler} 
                         />
                     </div>
                     <div className='login_wrap'>
@@ -60,7 +49,6 @@ function Login() {
                     </div>
                     <div className='login_submit'>
                         <button
-                        // onClick={()=>getApi()} 
                         className='login_button' type='submit'>Đăng nhập</button>
                     </div>
                     <div className='login__1'>

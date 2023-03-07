@@ -1,0 +1,38 @@
+.profile {
+    left: 25%;
+    top: 25%;
+    width: 50%;
+    height: 50%;
+    position: fixed;
+    background-color: #ede7e7;
+    z-index: 1;
+    border-radius: 5px;
+    border: solid #d4d2d2;
+
+}
+
+.profile_title{
+    display: flex;
+    justify-content: center;
+}
+.profile_item{
+    margin: 5px;
+    font-weight: 500;
+    color: red;
+    top: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    right: 20px;
+    font-size: 1.5rem;
+}
+.profile_wrap{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.them_film{
+    text-decoration: none;
+    background-color: #33ff00;
+    border-radius: 5px;
+}

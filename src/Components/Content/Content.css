@@ -62,12 +62,8 @@
 }
 .header_list-item:hover{
     color: #33ff00;
-    margin-bottom: 10px;
-    border-radius: 9999px;
     background-color: red;
     border: solid #fff;
-    padding: 0 10px 0 10px;
-    
 }
 .product{
     top: 180px;
@@ -104,38 +100,22 @@
     width: 100%;
 }
 
-.dangnhap{
-    background-color: #33ff00;
-    text-decoration: none;
-    color: red;
-    height: 20px;
-    border: solid #fff;
-    border-radius: 5px;
-}
 .messenger{
     z-index: 1;
     font-size: 1.5rem;
     right: 20px;;
-    bottom: 20px;
+    top: 130px;
     position: fixed;
     background-color: red;
     border-radius: 9999px;
 }
+.profile-button{
+    height: 25px;
+   background-color: #33ff00;
+   color: #fff;
+   z-index: 1;
+}
 
-.user{
-    display: none;
-    z-index: 1;
-    height: 120px;
-    right: 10px;
-    border-radius: 5px;
-    border: solid #c5c2c2;
-    position: absolute;
-    background-color: #fff;
-}
-.user_item{
-    margin: 2px;
-    list-style: none;
-}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
@@ -154,6 +134,16 @@
     .product{
         top: 180px;
     }
+    .messenger{
+        margin-top: -15px;
+        margin-right: -8px;
+        height: 1rem;
+        font-size: 10px;
+    }
+    .header_list-item{
+        font-size: 0.5rem;
+        width: 100%;
+    }
 }
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
@@ -164,7 +154,7 @@
         width: 90%;
     }
     .messenger{
-        height: 4rem;
+        height: 2.5rem;
         font-size: 20px;
     }
   

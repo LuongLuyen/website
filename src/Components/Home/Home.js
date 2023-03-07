@@ -14,10 +14,6 @@ function Home() {
                     <div>
                         <h1>HOME</h1>
                     </div>
-                    <div className='user'>
-                        <Link className='home_user' to='/register'>Đăng ký</Link>
-                        <Link className='home_user' to='/login'>Đăng nhập</Link>
-                    </div>
                 </div>
                 <div className='home_content'>
                     <h1>Trailer Film</h1>
@@ -33,11 +29,11 @@ function Home() {
                     Xem ở mọi nơi. Hủy bất kỳ lúc nào.
                     </p>
                     <div className='home_button'>
-                        <Link className='home-to-content' to='/content'>XEM NGAY</Link>
+                        <Link className='home-to-content' to='/register'>XEM NGAY</Link>
                     </div>
                 </div>
                 <div>
-                    <Link className='trailer_wrap' to='/content'>
+                    <Link className='trailer_wrap' to='/register'>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>

@@ -12,10 +12,15 @@ import{
 import {useEffect, useState} from 'react'
 import axios from 'axios'
 
+
 function App() {
-  const user= true
-  //get api
   const [data, setData] = useState(null)
+  const [user,setUser]= useState("")
+
+  const callbackFunction = (childData) => {
+    setUser(childData)
+  }
+  //get api
   useEffect(() => {
       axios.get(process.env.REACT_APP_URL_DATA)
       .then((response) => {
@@ -28,10 +33,10 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path='/login' element={<Login parentCallback={callbackFunction}/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/content' element={<Content props={data} />} />
-        <Route path='/content/upload' element= {user ? <Upload/>:<Navigate to ='/content'/>}/>
+        <Route path='/upload' element= {user ? <Upload/>:<Navigate to ='/'/>}/>
       </Routes>
     </Router>
   );

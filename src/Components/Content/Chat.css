@@ -1,7 +1,71 @@
-.chat{
-    height: 100%;
+
+.chat-item {
     width: 50%;
-    top: 24%;
+}
+.your-message {
+    background: #009bff;
+    margin: 1em;
+    border-radius: 1em;
+    padding: 1em;
+    color: white;
+    float: right;
+}
+
+.other-people {
+    background: #868686;
+    margin: 1em;
+    border-radius: 1em;
+    padding: 1em;
+    color: white;
+    text-align: left;
+    float: left;
+}
+
+.box-chat_message {
+    min-height: 60vh;  
+    max-height: 60vh;  
+    overflow-y: auto;
+
+}
+.box-chat {
+    width:70%;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 0 0 10px 0 black;
+    border-radius: 1em;
+}
+
+.send-box {
+    width: 100%;
+    padding: 1em;
+}
+
+textarea {
+    width: 80%;
+    margin: 0;
+    padding: 0.5em;
+    background: #ebf5ff;
+    border-radius: 2em; 
+    display: flex;
+    float: left;
+}
+.chat_send {
+    width: 10%;
+    background: #6650ff;
+    color: white;
+    margin-left: 2px;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    padding: 1em;
+    text-align: center;
+
+}
+  
+.chat{
+    height: 70%;
+    width: 50%;
+    top: 12%;
     right: 0;
     bottom: 0;
     position: fixed;
@@ -13,7 +77,12 @@
 @media (max-width: 46.1875em) {
     .chat{
         width: 100%;
-        top: 46%;
+        top: 20%;
+        height: 70%;
+    }
+    .box-chat_message {
+        min-height: 55vh;  
+        overflow-y: auto;
     }
 
 }
@@ -21,6 +90,11 @@
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .chat{
         width: 100%;
-        top: 62%;
+        top: 40%;
+        height: 50%;
+    }
+    .box-chat_message {
+        min-height: 40vh;  
+        overflow-y: auto;
     }
 }

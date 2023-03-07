@@ -1,17 +1,19 @@
-import { useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useRef, useState} from 'react'
 import Video from './Contentvideo'
 import Chat from './Chat'
+import Profile from './Profile'
 import './Content.css'
 function Content(props) {
     const data =props.props
     console.log(data)
-
+    
     const [show,setShow] =useState(false)
     const [showChat,setShowChat] =useState(false)
+    const [showProfile,setProfile] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
     const [inputText, setInputText] = useState("")
+    
 
     //thanh search
     const inputHandler = (e) => {
@@ -73,24 +75,19 @@ function Content(props) {
             <div 
             onClick={()=>setShowChat(false)}
             className='header'>
-                <div className='header_home'>
+                <div
+                 className='header_home'>
                     <div className='header_title'>
                         <h1>Phim BờRồ</h1>
                     </div>
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <Link className='dangnhap' to='/login'>
-                            Đăng nhập
-                        </Link>
-                        <div className='user'>
-                            <ul>
-                                <li className='user_item'>Tên</li>
-                                <li className='user_item'>Cài đặt</li>
-                                <li className='user_item'>Trợ giúp</li>
-                                <li className='user_item'>Đăng xuất</li>
-                            </ul>
-                        </div>
+                        <span 
+                        onClick={()=>setProfile(!showProfile)}
+                        className='profile-button'>
+                            Hồ sơ
+                        </span>
                     </div>
                 </div>
                 <div className='header_search'>
@@ -112,39 +109,45 @@ function Content(props) {
                     </div>
                 </div>
             </div>
-            <div 
-            onClick={()=>setShowChat(false)}
-            className='product'>
-                {show && <Video value={video}/>}
-                <div onClick={handleClick} className='product_wrap'>
-                    {product.map((item,index) =>(
-                        <div 
-                        key={index}
-                        onClick={()=>filterVideo(item._id)}
-                        className='product_film'>
-                            <img 
-                            onClick={()=>mountVideo()} 
-                            className='product_img' 
-                            src={item.img} 
-                            alt={item.title}
-                            />
-                            <div className='product_item'>
-                                <span>
-                                    {item.title}
-                                </span>
+            <div>
+                {showProfile && <Profile/>}
+            </div>
+            <div
+                onClick={()=>setProfile(false)}>
+                <div 
+                onClick={()=>setShowChat(false)}
+                className='product'>
+                    {show && <Video value={video}/>}
+                    <div onClick={handleClick} className='product_wrap'>
+                        {product.map((item,index) =>(
+                            <div 
+                            key={index}
+                            onClick={()=>filterVideo(item._id)}
+                            className='product_film'>
+                                <img 
+                                onClick={()=>mountVideo()} 
+                                className='product_img' 
+                                src={item.img} 
+                                alt={item.title}
+                                />
+                                <div className='product_item'>
+                                    <span>
+                                        {item.title}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
             <div>
                 {showChat && <Chat value ={showChat}/>}
             </div>
             <div  className='messenger'>
-            <div
-            onClick={()=>setShowChat(!showChat)}>
-                Messenger
-            </div>
+                <div
+                onClick={()=>setShowChat(!showChat)}>
+                    Messenger
+                </div>
             </div>
         </div>
     )
