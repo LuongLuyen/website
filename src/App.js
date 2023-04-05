@@ -7,19 +7,13 @@ import{
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from 'react-router-dom'
-import {useEffect, useState} from 'react'
+import {useEffect,useState} from 'react'
 import axios from 'axios'
 
 
 function App() {
   const [data, setData] = useState(null)
-  const [user,setUser]= useState("")
-
-  const callbackFunction = (childData) => {
-    setUser(childData)
-  }
   //get api
   useEffect(() => {
       axios.get(process.env.REACT_APP_URL_DATA)
@@ -33,10 +27,10 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login parentCallback={callbackFunction}/>}/>
+        <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/content' element={<Content props={data} />} />
-        <Route path='/upload' element= {user ? <Upload/>:<Navigate to ='/'/>}/>
+        <Route path='/content' element={<Content props={data}/>} />
+        <Route path='/upload' element= {<Upload/>}/>
       </Routes>
     </Router>
   );

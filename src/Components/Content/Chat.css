@@ -8,7 +8,7 @@
     border-radius: 1em;
     padding: 1em;
     color: white;
-    float: right;
+    float: left;
 }
 
 .other-people {
@@ -18,11 +18,11 @@
     padding: 1em;
     color: white;
     text-align: left;
-    float: left;
+    float: right;
 }
 
 .box-chat_message {
-    min-height: 60vh;  
+    min-height: 40vh;  
     max-height: 60vh;  
     overflow-y: auto;
 
@@ -77,24 +77,22 @@ textarea {
 @media (max-width: 46.1875em) {
     .chat{
         width: 100%;
-        top: 20%;
-        height: 70%;
+        top: 25%;
+        height: 60%;
     }
     .box-chat_message {
-        min-height: 55vh;  
-        overflow-y: auto;
+        height: 50vh;  
     }
 
 }
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .chat{
-        width: 100%;
-        top: 40%;
-        height: 50%;
+        width: 50%;
+        top: 20%;
+        height: 60%;
     }
     .box-chat_message {
-        min-height: 40vh;  
-        overflow-y: auto;
+       height: 50vh;
     }
 }

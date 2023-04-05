@@ -2,24 +2,22 @@ import { useRef, useState} from 'react'
 import Video from './Contentvideo'
 import Chat from './Chat'
 import Profile from './Profile'
+import Search from './Search'
 import './Content.css'
 function Content(props) {
     const data =props.props
-    console.log(data)
     
     const [show,setShow] =useState(false)
     const [showChat,setShowChat] =useState(false)
+    const [showSearch,setShowSearch] =useState(false)
     const [showProfile,setProfile] =useState(false)
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
     const [inputText, setInputText] = useState("")
-    
-
     //thanh search
     const inputHandler = (e) => {
         const lowerCase = e.target.value.toLowerCase()
         setInputText(lowerCase)
-        console.log(lowerCase)
     }
     const filterData = data.filter((prevData) => {   
         if (inputText === '') {
@@ -29,7 +27,6 @@ function Content(props) {
             return prevData.title.toLowerCase().includes(inputText)
         }
     })
-    console.log(filterData)
     const handleSearch = ()=>{
         setProduct(filterData)
     }
@@ -83,7 +80,7 @@ function Content(props) {
                     <div className='header_user'>
                         <span>Thông báo</span>
                         <span>Trợ giúp</span>
-                        <span 
+                        <span
                         onClick={()=>setProfile(!showProfile)}
                         className='profile-button'>
                             Hồ sơ
@@ -92,6 +89,7 @@ function Content(props) {
                 </div>
                 <div className='header_search'>
                     <input
+                    onClick={()=>setShowSearch(!showSearch)}
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'
@@ -143,11 +141,17 @@ function Content(props) {
             <div>
                 {showChat && <Chat value ={showChat}/>}
             </div>
-            <div  className='messenger'>
+            <div
+                className='messenger'>
                 <div
-                onClick={()=>setShowChat(!showChat)}>
+                    onClick={()=>setShowChat(!showChat)}>
                     Messenger
                 </div>
+            </div>
+            <div
+                onClick={()=>setShowSearch(false)}
+            >
+                {showSearch && <Search/>}
             </div>
         </div>
     )

@@ -1,19 +1,18 @@
-import { useEffect, useState} from 'react'
+import { useEffect,useState } from 'react';
 import { Link } from 'react-router-dom'
 import './Login.css'
 
-function Login(props) {
-    const [user,setUser]= useState("")
-    const inputHandler = (e) => {
-        const user = e.target.value
-        setUser(user)
-    }
+function Login() {
     const url = process.env.REACT_APP_URL_LOGIN
+    const [items, setItems] = useState([])
 
-    useEffect(()=>{
-        props.parentCallback(user)
-    })
-
+    useEffect(() => {
+        sessionStorage.setItem('items', JSON.stringify(items))
+    }, [items])
+    const saveData=(e)=>{
+        const data = e.target.value
+        setItems(data)
+    }
     return (
         <div className='login'>
             <div className='header_home'>
@@ -31,11 +30,11 @@ function Login(props) {
                     <div className='login_wrap'>
                         <label className='login_name'>Tên đăng nhập</label>
                         <input
-                        onChange={inputHandler} 
                         className='login_input'
                         name='username'
                         type='text'
                         placeholder='Username:   admin123'
+                        onChange={saveData}
                         />
                     </div>
                     <div className='login_wrap'>

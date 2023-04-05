@@ -2,7 +2,6 @@
     left: 25%;
     top: 25%;
     width: 50%;
-    height: 50%;
     position: fixed;
     background-color: #ede7e7;
     z-index: 1;
@@ -35,4 +34,31 @@
     text-decoration: none;
     background-color: #33ff00;
     border-radius: 5px;
+}
+.profile_item-username{
+    color: #33ff00;
+}
+
+/* responsive
+/* Mobile: width < 740px = 46.1875em */
+@media (max-width: 46.1875em) {
+    .profile{
+        width: 100%;
+        height: 40%;
+        left: 0;
+    }
+    .profile_item{
+        font-size: 1rem;
+    }
+}
+/* Tablet: width >= 740px and width <1024px  */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .profile{
+        left: 20%;
+        width: 60%;
+        height: 35%;
+    }
+    .profile_item{
+        font-size: 1.5rem;
+    }
 }

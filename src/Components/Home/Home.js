@@ -29,11 +29,11 @@ function Home() {
                     Xem ở mọi nơi. Hủy bất kỳ lúc nào.
                     </p>
                     <div className='home_button'>
-                        <Link className='home-to-content' to='/register'>XEM NGAY</Link>
+                        <Link className='home-to-content' to='/login'>XEM NGAY</Link>
                     </div>
                 </div>
                 <div>
-                    <Link className='trailer_wrap' to='/register'>
+                    <Link className='trailer_wrap' to='/login'>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>
                         <img className='trailer_item' src={imgTrailer} alt='/'/>

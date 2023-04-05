@@ -1,21 +1,36 @@
 import React, { useState, useEffect, useRef } from "react"
 import socketIOClient from "socket.io-client"
+import axios from 'axios'
 import './Chat.css'
 const host = process.env.REACT_APP_URL_SERVER
 
 
 function Chat() {
-    const [mess, setMess] = useState([])
-    const [message, setMessage] = useState('')
-    const [id, setId] = useState()
-    const socketRef = useRef()
-    const messagesEnd = useRef()
+  const [mess, setMess] = useState([])
+  const [message, setMessage] = useState('')
+  const socketRef = useRef()
+  const messagesEnd = useRef()
+  
+  const [items, setItems] = useState([])
+  
+  //get api
+  useEffect(() => {
+      axios.get(process.env.REACT_APP_URL_MSG)
+      .then((response) => {
+          setMess(response.data)
+      })
+  }, []) 
+    
+    // get data localstorage
+    useEffect(() => {
+      const items = JSON.parse(sessionStorage.getItem('items'))
+      if (items) {
+       setItems(items)
+      }
+    }, [])
 
     useEffect(() => {
       socketRef.current = socketIOClient.connect(host)
-      socketRef.current.on('getId', data => {
-        setId(data)
-      })
       socketRef.current.on('sendDataServer', dataGot => {
         setMess(oldMsgs => [...oldMsgs, dataGot.data])
         scrollToBottom()
@@ -28,8 +43,8 @@ function Chat() {
     const sendMessage = () => {
       if(message !== null) {
         const msg = {
-          content: message, 
-          id: id
+          sender:items,
+          content: message
         }
         socketRef.current.emit('sendDataClient', msg)
         setMessage('')
@@ -41,7 +56,9 @@ function Chat() {
     }
     
     const renderMess =  mess.map((m, index) => 
-        <div key={index} className={`${m.id === id ? 'your-message' : 'other-people'} chat-item`}>
+        <div key={index} className={`${m.sender===items? 'your-message' : 'other-people'} chat-item`}>
+          [{m.sender}]:
+          <br/>
           {m.content}
         </div>
       )
@@ -59,10 +76,10 @@ function Chat() {
     return (
       <div className="chat box-chat">
         <div className="box-chat_message">
-        {renderMess}
+          {renderMess}
         <div style={{ float:"left", clear: "both" }}
-              ref={messagesEnd}>
-          </div>
+            ref={messagesEnd}>
+        </div>
         </div>
 
         <div className="send-box">
