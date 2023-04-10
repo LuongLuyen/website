@@ -1,0 +1,36 @@
+.notice{
+    width: 50%;
+    height: 20%;
+    top: 40%;
+    z-index: 1;
+    position: fixed;
+    background-color: rgb(215, 214, 214);
+    border: solid #333;
+    border-radius: 5px;
+}
+.notice_title{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+.notice_button{
+    width: 100%;
+    bottom: 2px;
+    display: flex;
+    justify-content: space-around;
+}
+/* responsive
+/* Mobile: width < 740px = 46.1875em */
+@media (max-width: 46.1875em) {
+    .notice{
+        width: 100%;
+    }
+
+}
+/* Tablet: width >= 740px and width <1024px  */
+@media (min-width: 46.25em) and (max-width: 63.9375em){
+    .notice{
+        top: 50%;
+        height: 10%;
+    }
+}

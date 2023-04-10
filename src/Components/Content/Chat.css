@@ -3,18 +3,14 @@
     width: 50%;
 }
 .your-message {
-    background: #009bff;
     margin: 1em;
-    border-radius: 1em;
     padding: 1em;
     color: white;
     float: left;
 }
 
 .other-people {
-    background: #868686;
     margin: 1em;
-    border-radius: 1em;
     padding: 1em;
     color: white;
     text-align: left;
@@ -22,7 +18,7 @@
 }
 
 .box-chat_message {
-    min-height: 40vh;  
+    min-height: 60vh;  
     max-height: 60vh;  
     overflow-y: auto;
 
@@ -36,7 +32,9 @@
 }
 
 .send-box {
-    width: 100%;
+    bottom: 12%;
+    position: fixed;
+    width: 50%;
     padding: 1em;
 }
 
@@ -72,16 +70,36 @@ textarea {
     background-color: #fff;
     border: solid #333;
 }
+.chat_user{
+    color: #333;
+    border-radius: 5px;
+}
+.chat_your{
+    background: #009bff;
+    border-radius: 5px;
+}
+.chat_other{
+    background: #868686;
+    border-radius: 5px;
+}
+.chat_delete{
+    background-color: rgb(179, 174, 174);
+    color: #333;
+    border-radius: 2px;
+}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
     .chat{
         width: 100%;
-        top: 25%;
+        top: 20%;
         height: 60%;
     }
     .box-chat_message {
-        height: 50vh;  
+        min-height: 50vh;  
+    }
+    .send-box{
+        width: 100%;
     }
 
 }
@@ -93,6 +111,6 @@ textarea {
         height: 60%;
     }
     .box-chat_message {
-       height: 50vh;
+       min-height: 50vh;
     }
 }

@@ -33,7 +33,7 @@ function Login() {
                         className='login_input'
                         name='username'
                         type='text'
-                        placeholder='Username:   admin123'
+                        placeholder='Username'
                         onChange={saveData}
                         />
                     </div>
@@ -43,7 +43,7 @@ function Login() {
                         className='login_input'
                         name='password'
                         type='password'
-                        placeholder='Password:   admin123'
+                        placeholder='Password'
                         />
                     </div>
                     <div className='login_submit'>
