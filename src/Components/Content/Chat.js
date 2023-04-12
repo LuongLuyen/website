@@ -100,7 +100,7 @@ function Chat() {
               >
               <span 
               onClick={()=>setNotice(!false)}
-              className={`${m.sender===items? 'chat_delete':null}`}
+              className={`${m.sender===items? 'chat_delete':'chat_nodelete'}`}
               >
                 Delete
               </span>

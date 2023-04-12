@@ -22,13 +22,14 @@ function App() {
       })
   }, []) 
   if (!data) return null
+  console.log(data)
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/content' element={<Content props={data}/>} />
+        <Route path='/content' element={<Content props={data}/>}/>
         <Route path='/upload' element= {<Upload/>}/>
       </Routes>
     </Router>

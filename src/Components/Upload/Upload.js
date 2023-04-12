@@ -7,7 +7,7 @@ function Upload() {
     const urladd= process.env.REACT_APP_URL_ADD
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
-    const [title,setTitle]=useState('')
+    const [type,setType]=useState('')
     const [fileName,setFileName]=useState('')
 
     useEffect(()=>{
@@ -27,24 +27,23 @@ function Upload() {
         setUpload(file)
     }
     const handleSubmit =()=>{
-        axios.post(urladd, {name,title,fileName})
-        .then((res)=>{
-        console.log(res)
-        })
-        .catch((err)=>{
-        console.log(err)
-        })
-        console.log({name,title,fileName})
+        if(name&&type&&fileName){
+            axios.post(urladd, {name,type,fileName})
+            .then((res)=>{
+            console.log(res)
+            })
+            .catch((err)=>{
+            console.log(err)
+            })
+        }
+        console.log({name,type,fileName})
     }
     return ( 
         <div className='upload_wrap'>
-            <form onSubmit={e=>{
-                e.preventDefault()
-            }}>
+            <form onSubmit={e=>{e.preventDefault()}}>
                 <div className='title'>
                     <h1>Thêm phim</h1>
                 </div>
-             
                 <div className='upload' >
                     <label className='upload_title'>Tên Film</label>
                     <input 
@@ -55,19 +54,18 @@ function Upload() {
                     onChange={e=> setName(e.target.value)}
                     />
                 </div>
-
                 <div className='upload'>
                     <label className='upload_title'>Thể loại phim</label>
                         <select  
-                        onChange={e=> setTitle(e.target.value)} 
+                        onChange={e=> setType(e.target.value)} 
                         className='upload_item' 
                         htmlFor="lang-select">
-                            <option value="">--Chọn thể loại phim--</option>
-                            <option value="Hành động">----Hành động----</option>
-                            <option value="Phiêu lưu">----Phiêu lưu----</option>
-                            <option value="Hoạt hình">----Hoạt hình----</option>
-                            <option value="Kung fu">----Kungfu----</option>
-                            <option value="Kinh dị">----Kinh dị----</option>
+                            <option>--Chọn thể loại phim--</option>
+                            <option value="hanhdong">----Hành động----</option>
+                            <option value="phieuluu">----Phiêu lưu----</option>
+                            <option value="hoathinh">----Hoạt hình----</option>
+                            <option value="kungfu">----Kungfu----</option>
+                            <option value="kinhdi">----Kinh dị----</option>
                         </select>
                 </div>
             </form>

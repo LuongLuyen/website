@@ -87,6 +87,9 @@ textarea {
     color: #333;
     border-radius: 2px;
 }
+.chat_nodelete{
+    display: none;
+}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {

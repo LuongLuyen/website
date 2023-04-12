@@ -24,7 +24,7 @@ function Content(props) {
             return prevData
         }
         else {
-            return prevData.title.toLowerCase().includes(inputText)
+            return prevData.type.toLowerCase().includes(inputText)
         }
     })
     const handleSearch = ()=>{
@@ -43,10 +43,10 @@ function Content(props) {
     }
 
     //filter film
-    const filterFilm = (title)=>{
+    const filterFilm = (type)=>{
         setProduct(
             data.filter((item) => {
-                return item.title === title
+                return item.type === type
             })
         )
     }
@@ -87,7 +87,9 @@ function Content(props) {
                         </span>
                     </div>
                 </div>
-                <div className='header_search'>
+                <div
+                onClick={()=>setProfile(false)}
+                 className='header_search'>
                     <input
                     onClick={()=>setShowSearch(!showSearch)}
                     className='header_search-input'
@@ -99,16 +101,13 @@ function Content(props) {
                 </div>
                 <div className='header_category'>
                     <div className='header_list'>
-                        <button onClick={()=>filterFilm('Hành động')} className='header_list-item'>Hành động</button>
-                        <button onClick={()=>filterFilm('Phiêu lưu')} className='header_list-item'>Phiêu lưu</button>
-                        <button onClick={()=>filterFilm('Hoạt hình')} className='header_list-item'>Hoạt hình</button>
-                        <button onClick={()=>filterFilm('Kung fu')} className='header_list-item'>Kungfu</button>
-                        <button onClick={()=>filterFilm('Kinh dị')} className='header_list-item'>Kinh dị</button>
+                        <button onClick={()=>filterFilm('hanhdong')} className='header_list-item'>Hành động</button>
+                        <button onClick={()=>filterFilm('phieuluu')} className='header_list-item'>Phiêu lưu</button>
+                        <button onClick={()=>filterFilm('hoathinh')} className='header_list-item'>Hoạt hình</button>
+                        <button onClick={()=>filterFilm('kungfu')} className='header_list-item'>Kungfu</button>
+                        <button onClick={()=>filterFilm('kinhdi')} className='header_list-item'>Kinh dị</button>
                     </div>
                 </div>
-            </div>
-            <div>
-                {showProfile && <Profile/>}
             </div>
             <div
                 onClick={()=>setProfile(false)}>
@@ -126,17 +125,20 @@ function Content(props) {
                                 onClick={()=>mountVideo()} 
                                 className='product_img' 
                                 src={item.img} 
-                                alt={item.title}
+                                alt={item.type}
                                 />
                                 <div className='product_item'>
                                     <span>
-                                        {item.title}
+                                        {item.type}
                                     </span>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
+            </div>
+            <div>
+                {showProfile && <Profile/>}
             </div>
             <div>
                 {showChat && <Chat value ={showChat}/>}
