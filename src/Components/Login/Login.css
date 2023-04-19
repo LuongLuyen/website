@@ -52,11 +52,31 @@
     font-size: 10px;
     margin: 0 20rem 0 20rem;
 }
+.login_check-status1{
+    display: block;
+    color: red;
+    font-size: 10px;
+    margin: 0 20rem 0 20rem;
+}
+.login_check-status2{
+    display: block;
+    color: #33ff00;
+    font-size: 10px;
+    margin: 0 20rem 0 20rem;
+}
 
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
     .login_check{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .login_check-status1{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .login_check-status2{
         width: 100%;
         margin-left: 20px;
     }
@@ -82,6 +102,12 @@
 /* Tablet: width >= 740px and width <1024px  */
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .login_check{
+        margin-left: 200px;
+    }
+    .login_check-status1{
+        margin-left: 200px;
+    }
+    .login_check-status2{
         margin-left: 200px;
     }
     .login_wrap{

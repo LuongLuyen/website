@@ -16,9 +16,7 @@ function Login() {
     return (
         <div className='login'>
             <div className='header_home'>
-                <Link className='header_title' to='/content'>
-                    <h1>Phim BờRồ</h1>
-                </Link>
+                <h1>Phim BờRồ</h1>
             </div>
             <div className='login_title'>
                 <h1>Đăng nhập</h1>

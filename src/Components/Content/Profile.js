@@ -4,7 +4,6 @@ import axios from 'axios'
 import './Profile.css'
 function Profile() {
     const [items, setItems] = useState(false)
-    console.log(items)
     useEffect(() => {
       const items = JSON.parse(sessionStorage.getItem('items'))
       if (items) {
@@ -27,9 +26,13 @@ function Profile() {
                 <li className='profile_item'>Cài đặt</li>             
                 <li className='profile_item'>Thông báo</li> 
                 <li className='profile_item'>Sữa hồ sơ</li> 
+                <Link to ='/admin'
+                className= {`${items==='admin123'? 'profile_item':'no_film'}`}>
+                    Quản lý người dùng
+                </Link> 
                 <Link to ='/login'
                 onClick={deleteUser}
-                className= {`${items? 'profile_item':'no_film'}`}>
+                className= {`${items!=='admin123'? 'profile_item':'no_film'}`}>
                     Xóa
                 </Link> 
                 <div className='profile_wrap'>                        

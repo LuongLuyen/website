@@ -1,11 +1,11 @@
 .notice{
-    width: 50%;
+    width: 49%;
     height: 20%;
     top: 40%;
     z-index: 1;
     position: fixed;
-    background-color: rgb(215, 214, 214);
-    border: solid #333;
+    background-color: rgb(246, 242, 242);
+    border: solid #898888;
     border-radius: 5px;
 }
 .notice_title{
@@ -19,6 +19,26 @@
     display: flex;
     justify-content: space-around;
 }
+.notice_y{
+    display: flex;
+    justify-content: center;
+    background-color: #33ff00;
+    width: 100px;
+    border-radius: 5px;
+}
+.notice_n{
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    width: 100px;
+    border-radius: 5px;
+}
+.notice_n:hover{
+    background-color: #33ff00;
+}
+.notice_y:hover{
+    background-color: red;
+}
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
@@ -31,6 +51,6 @@
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .notice{
         top: 50%;
-        height: 10%;
+        height: 170px;
     }
 }

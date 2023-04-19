@@ -1,6 +1,8 @@
 
 .chat-item {
     width: 50%;
+    background-color: rgb(239, 239, 237);
+    border-radius: 20px;
 }
 .your-message {
     margin: 1em;
@@ -18,24 +20,24 @@
 }
 
 .box-chat_message {
-    min-height: 60vh;  
-    max-height: 60vh;  
+    min-height: 50vh;  
+    max-height: 50vh;
     overflow-y: auto;
+    border-radius: 10px;
 
 }
 .box-chat {
-    width:70%;
     margin: 0 auto;
-    margin-top: 100px;
     box-shadow: 0 0 10px 0 black;
     border-radius: 1em;
 }
 
 .send-box {
-    bottom: 12%;
     position: fixed;
-    width: 50%;
+    width: 48%;
     padding: 1em;
+    background-color: beige;
+    border-radius: 10px;
 }
 
 textarea {
@@ -61,9 +63,9 @@ textarea {
 }
   
 .chat{
-    height: 70%;
+    height: 60%;
     width: 50%;
-    top: 12%;
+    top: 30%;
     right: 0;
     bottom: 0;
     position: fixed;
@@ -72,19 +74,20 @@ textarea {
 }
 .chat_user{
     color: #333;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 .chat_your{
-    background: #009bff;
-    border-radius: 5px;
+    background: #5dbbf9;
+    border-radius: 2px;
 }
 .chat_other{
     background: #868686;
-    border-radius: 5px;
+    border-radius: 2px;
 }
 .chat_delete{
-    background-color: rgb(179, 174, 174);
-    color: #333;
+    background-color: #fec89d;
+    padding: 0 20px 0 20px;
+    color: red;
     border-radius: 2px;
 }
 .chat_nodelete{
@@ -95,14 +98,18 @@ textarea {
 @media (max-width: 46.1875em) {
     .chat{
         width: 100%;
-        top: 20%;
+        top: 30%;
         height: 60%;
     }
     .box-chat_message {
         min-height: 50vh;  
+        max-height: 50vh;  
     }
-    .send-box{
-        width: 100%;
+    .send-box {
+        width: 95%;
+    }
+    .chat_send{
+        width: 15%;
     }
 
 }
@@ -110,10 +117,14 @@ textarea {
 @media (min-width: 46.25em) and (max-width: 63.9375em){
     .chat{
         width: 50%;
-        top: 20%;
-        height: 60%;
+        top: 300px;
+        height: 55%;
     }
     .box-chat_message {
-       min-height: 50vh;
+       min-height: 43vh;
+       max-height: 43vh;
+    }
+    .send-box {
+        width: 45%;
     }
 }

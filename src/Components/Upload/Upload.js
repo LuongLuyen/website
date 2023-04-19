@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 import './Upload.css'
 function Upload() {
     const urlupload=process.env.REACT_APP_URL_UPLOAD
@@ -28,18 +29,26 @@ function Upload() {
     }
     const handleSubmit =()=>{
         if(name&&type&&fileName){
-            axios.post(urladd, {name,type,fileName})
+            const date= `${Date.now()}`
+            const port = process.env.REACT_APP_URL_SERVER
+            const img =`${port}/uploads/${type}.jpg`
+            const video = `${port}/uploads/${date.slice(0,9)}${fileName}`
+            axios.post(urladd, {name,type,video,img})
             .then((res)=>{
             console.log(res)
             })
             .catch((err)=>{
             console.log(err)
             })
+            console.log({name,type,video,img})
         }
-        console.log({name,type,fileName})
     }
     return ( 
         <div className='upload_wrap'>
+            <Link 
+                className='header_title' to='../content'>
+                    Phim BờRồ
+            </Link>
             <form onSubmit={e=>{e.preventDefault()}}>
                 <div className='title'>
                     <h1>Thêm phim</h1>

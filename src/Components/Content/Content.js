@@ -2,18 +2,20 @@ import { useRef, useState} from 'react'
 import Video from './Contentvideo'
 import Chat from './Chat'
 import Profile from './Profile'
-import Search from './Search'
+import { Link } from 'react-router-dom'
 import './Content.css'
 function Content(props) {
     const data =props.props
     
     const [show,setShow] =useState(false)
     const [showChat,setShowChat] =useState(false)
-    const [showSearch,setShowSearch] =useState(false)
     const [showProfile,setProfile] =useState(false)
+
     const [product,setProduct] = useState(data)
     const [video,setVideo] = useState(data)
     const [inputText, setInputText] = useState("")
+    const [check, setCheck] = useState(false)
+
     //thanh search
     const inputHandler = (e) => {
         const lowerCase = e.target.value.toLowerCase()
@@ -24,13 +26,14 @@ function Content(props) {
             return prevData
         }
         else {
-            return prevData.type.toLowerCase().includes(inputText)
+            return prevData.name.toLowerCase().includes(inputText)
         }
     })
+
     const handleSearch = ()=>{
         setProduct(filterData)
     }
-    const handleEnter= function(e){
+    const handleEnter= (e)=>{
         if(e.keyCode===13){
             handleSearch()
         }
@@ -50,6 +53,15 @@ function Content(props) {
             })
         )
     }
+    //filter search
+    const filter = (_id)=>{
+        setProduct(
+            data.filter((item) => {
+                return item._id === _id
+            })
+        )
+    }
+  
 
     // play content video
     const filterVideo = (_id)=>{
@@ -67,6 +79,14 @@ function Content(props) {
             return true
         })
     }
+    const handleLoad=()=>{
+        setShow(false)
+        setShowChat(false)
+        setProfile(false)
+        setCheck(false)
+        setProduct(data)
+    }
+
     return ( 
         <div ref={refTop} className='app'>
             <div 
@@ -74,12 +94,14 @@ function Content(props) {
             className='header'>
                 <div
                  className='header_home'>
-                    <div className='header_title'>
-                        <h1>Phim BờRồ</h1>
-                    </div>
+                    <Link 
+                    onClick={handleLoad}
+                    className='header_title' to='../content'>
+                        Phim BờRồ
+                    </Link>
                     <div className='header_user'>
-                        <span>Thông báo</span>
-                        <span>Trợ giúp</span>
+                        <span className='header_notice'>Thông báo</span>
+                        <span className='header_notice'>Trợ giúp</span>
                         <span
                         onClick={()=>setProfile(!showProfile)}
                         className='profile-button'>
@@ -91,7 +113,7 @@ function Content(props) {
                 onClick={()=>setProfile(false)}
                  className='header_search'>
                     <input
-                    onClick={()=>setShowSearch(!showSearch)}
+                    onClick={()=>setCheck(true)}
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'
@@ -128,32 +150,30 @@ function Content(props) {
                                 alt={item.type}
                                 />
                                 <div className='product_item'>
-                                    <span>
-                                        {item.type}
-                                    </span>
+                                    {item.name}
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <div>
-                {showProfile && <Profile/>}
+            {showProfile && <Profile/>}
+            {showChat && <Chat value ={showChat}/>}
+            <div className='messenger'
+                onClick={()=>setShowChat(!showChat)}>
+                    Chat
             </div>
-            <div>
-                {showChat && <Chat value ={showChat}/>}
-            </div>
-            <div
-                className='messenger'>
-                <div
-                    onClick={()=>setShowChat(!showChat)}>
-                    Messenger
+            <div 
+            onClick={()=>setCheck(false)}
+            className={`${check? 'search':'no_search'}`}>
+            {filterData.map((item,index) =>(
+                <div 
+                onClick={()=>filter(item._id)}
+                className='search_content'
+                key ={index}>
+                    {item.name}
                 </div>
-            </div>
-            <div
-                onClick={()=>setShowSearch(false)}
-            >
-                {showSearch && <Search/>}
+            ))}
             </div>
         </div>
     )

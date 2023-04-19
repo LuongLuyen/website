@@ -16,10 +16,10 @@ function Notice(props) {
             <h1 className='notice_title'>Bạn muốn thu hồi ?</h1>
             <div
              className='notice_button'>
-                <span
+                <span className='notice_y'
                  onClick={handleDelete}
                 >Có</span>
-                <span
+                <span className='notice_n'
                 onClick={()=>{dataCb2()}}
                 >Không</span>
             </div>
