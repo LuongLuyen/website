@@ -36,7 +36,7 @@ function App() {
           setUsers(response.data)
       })
   }, []) 
-  if (!data&&!users) return null
+  if (!data) return null
   return (
     <Router>
       <Routes>

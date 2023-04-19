@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import './Content.css'
 function Content(props) {
     const data =props.props
+    console.log(data)
     
     const [show,setShow] =useState(false)
     const [showChat,setShowChat] =useState(false)
@@ -36,6 +37,7 @@ function Content(props) {
     const handleEnter= (e)=>{
         if(e.keyCode===13){
             handleSearch()
+            setCheck(false)
         }
     }
 
@@ -113,7 +115,7 @@ function Content(props) {
                 onClick={()=>setProfile(false)}
                  className='header_search'>
                     <input
-                    onClick={()=>setCheck(true)}
+                    onClick={()=>setCheck(!check)}
                     className='header_search-input'
                     type = 'text'
                     placeholder='Tìm kiếm'

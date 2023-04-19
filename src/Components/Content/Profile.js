@@ -22,10 +22,10 @@ function Profile() {
         <h1 className='profile_title'>HỒ SƠ</h1>
             <ul>
                 <li className='profile_item-username'>{items}</li>
-                <li className='profile_item'>Trợ giúp</li>             
-                <li className='profile_item'>Cài đặt</li>             
-                <li className='profile_item'>Thông báo</li> 
-                <li className='profile_item'>Sữa hồ sơ</li> 
+                <li className='profile_item'>Trợ giúp: (chưa sử lý)</li>             
+                <li className='profile_item'>Cài đặt: (chưa sử lý)</li>             
+                <li className='profile_item'>Thông báo: (chưa sử lý)</li> 
+                <li className='profile_item'>Sữa hồ sơ: (chưa sử lý)</li> 
                 <Link to ='/admin'
                 className= {`${items==='admin123'? 'profile_item':'no_film'}`}>
                     Quản lý người dùng
