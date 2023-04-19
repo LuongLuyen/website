@@ -96,6 +96,9 @@ textarea {
 /* responsive
 /* Mobile: width < 740px = 46.1875em */
 @media (max-width: 46.1875em) {
+    textarea{
+        width: 70%;
+    }
     .chat{
         width: 100%;
         top: 30%;
