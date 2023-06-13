@@ -64,6 +64,8 @@
 }
 .header_notice{
     margin: 0 5px 0 5px;
+    text-decoration: none;
+    color: red;
 }
 .header_notice:hover{
     color: #33ff00;

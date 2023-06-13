@@ -4,6 +4,8 @@ import Login from './Components/Login/Login.js'
 import Register from './Components/Register/Register.js'
 import Upload from './Components/Upload/Upload.js'
 import Admin from './Components/Admin/Admin.js'
+import Notification from './Components/Notification/Notification.js'
+import Help from './Components/Help/Help.js'
 import{
   BrowserRouter as Router,
   Routes,
@@ -36,13 +38,19 @@ function App() {
           setUsers(response.data)
       })
   }, []) 
-  if (!data) return null
+  if (!data) return (
+    <div className='loading'>
+      <h1>Vui lòng chờ....</h1>
+    </div>
+  )
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/help' element={<Help/>}/>
+        <Route path='/notification' element={<Notification/>}/>
         <Route path='/content' element={items[0] ? <Content props={data}/> : <Login/>}/>
         <Route path='/admin' element={items==='admin123' ? <Admin props={users}/> : <Content/>}/>
         <Route path='/upload' element= {items[0] ? <Upload/>:<Login/>}/>

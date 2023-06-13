@@ -47,7 +47,12 @@
     padding-left: 400px;
     color: #fff;
 }
-
+.header_title1{
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 20px;
+    color: crimson;
+}
 
 
 /* responsive

@@ -102,14 +102,16 @@ function Chat() {
               onClick={()=>setNotice(!false)}
               className={`${m.sender===items? 'chat_delete':'chat_nodelete'}`}
               >
-                ⊕
+                X
               </span>
-              <div style={{ float:"left", clear: "both" }}
-                ref={messagesEnd}>
-              </div>
             </span>
           </div>
         ))}
+          <div style={{ float:"left", clear: "both" }}
+            ref={messagesEnd}>
+          </div>
+          <div className='box'>
+          </div>
       </div>
       <div className="send-box">
         <textarea 

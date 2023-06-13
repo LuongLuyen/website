@@ -46,7 +46,7 @@ function Upload() {
     return ( 
         <div className='upload_wrap'>
             <Link 
-                className='header_title' to='../content'>
+                className='header_title1' to='../content'>
                     Phim BờRồ
             </Link>
             <form onSubmit={e=>{e.preventDefault()}}>

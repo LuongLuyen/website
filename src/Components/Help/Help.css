@@ -1,0 +1,6 @@
+.np{
+    display: flex;
+    justify-content: center;
+    color: #33ff00;
+    font-size: 50px;
+}

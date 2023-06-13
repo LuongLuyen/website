@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 import './Content.css'
 function Content(props) {
     const data =props.props
-    console.log(data)
     
     const [show,setShow] =useState(false)
     const [showChat,setShowChat] =useState(false)
@@ -102,8 +101,12 @@ function Content(props) {
                         Phim BờRồ
                     </Link>
                     <div className='header_user'>
-                        <span className='header_notice'>Thông báo</span>
-                        <span className='header_notice'>Trợ giúp</span>
+                        <Link className='header_notice' to='../notification'>
+                            Thông báo
+                        </Link>
+                        <Link className='header_notice' to='../help'>
+                            Trợ giúp
+                        </Link>
                         <span
                         onClick={()=>setProfile(!showProfile)}
                         className='profile-button'>
@@ -115,12 +118,12 @@ function Content(props) {
                 onClick={()=>setProfile(false)}
                  className='header_search'>
                     <input
-                    onClick={()=>setCheck(!check)}
-                    className='header_search-input'
-                    type = 'text'
-                    placeholder='Tìm kiếm'
-                    onChange={inputHandler} 
-                    onKeyDown={handleEnter}
+                        onClick={()=>setCheck(!check)}
+                        className='header_search-input'
+                        type = 'text'
+                        placeholder='Tìm kiếm'
+                        onChange={inputHandler} 
+                        onKeyDown={handleEnter}
                     />
                 </div>
                 <div className='header_category'>
