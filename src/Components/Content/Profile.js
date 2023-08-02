@@ -4,6 +4,7 @@ import axios from 'axios'
 import './Profile.css'
 function Profile() {
     const [items, setItems] = useState(false)
+    const domain = process.env.REACT_APP_SERVER
     useEffect(() => {
       const items = JSON.parse(sessionStorage.getItem('items'))
       if (items) {
@@ -11,7 +12,7 @@ function Profile() {
       }
     }, [])
     const deleteUser=()=>{
-        axios.delete(`${process.env.REACT_APP_URL_SERVER}/api/posts/delete-user/${items}`)
+        axios.delete(`${domain}/api/posts/delete-user/${items}`)
         .then(res => {
             console.log(res.data)
         }) 

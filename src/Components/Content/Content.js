@@ -1,4 +1,4 @@
-import { useRef, useState} from 'react'
+import { useRef, useState, useEffect} from 'react'
 import Video from './Contentvideo'
 import Chat from './Chat'
 import Profile from './Profile'
@@ -15,7 +15,14 @@ function Content(props) {
     const [video,setVideo] = useState(data)
     const [inputText, setInputText] = useState("")
     const [check, setCheck] = useState(false)
+    const [user, setUser] = useState('Hồ sơ')
 
+    useEffect(() => {
+      const items = JSON.parse(sessionStorage.getItem('items'))
+      if (items) {
+       setUser(items)
+      }
+    }, [])
     //thanh search
     const inputHandler = (e) => {
         const lowerCase = e.target.value.toLowerCase()
@@ -110,7 +117,7 @@ function Content(props) {
                         <span
                         onClick={()=>setProfile(!showProfile)}
                         className='profile-button'>
-                            Hồ sơ
+                            {user}
                         </span>
                     </div>
                 </div>

@@ -4,8 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import './Upload.css'
 function Upload() {
-    const urlupload=process.env.REACT_APP_URL_UPLOAD
-    const urladd= process.env.REACT_APP_URL_ADD
+    const domain= process.env.REACT_APP_SERVER
     const [upload,setUpload]=useState()
     const [name,setName]=useState('')
     const [type,setType]=useState('')
@@ -30,10 +29,9 @@ function Upload() {
     const handleSubmit =()=>{
         if(name&&type&&fileName){
             const date= `${Date.now()}`
-            const port = process.env.REACT_APP_URL_SERVER
-            const img =`${port}/uploads/${type}.jpg`
-            const video = `${port}/uploads/${date.slice(0,9)}${fileName}`
-            axios.post(urladd, {name,type,video,img})
+            const img =`${domain}/uploads/${type}.jpg`
+            const video = `${domain}/uploads/${date.slice(0,9)}${fileName}`
+            axios.post(`${domain}/api/posts/add`, {name,type,video,img})
             .then((res)=>{
             console.log(res)
             })
@@ -78,7 +76,7 @@ function Upload() {
                         </select>
                 </div>
             </form>
-            <form action={urlupload} method='POST' encType="multipart/form-data">
+            <form action={`${domain}/api/posts/upload`} method='POST' encType="multipart/form-data">
                     <div className='upload' >
                         <label className='upload_title' >Thêm Video</label>
                         <input className='upload_item-file'name='file' onChange={handleUpload} type="file"/>

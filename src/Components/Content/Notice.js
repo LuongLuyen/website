@@ -5,8 +5,9 @@ function Notice(props) {
     console.log(dataId[0].id)
     const dataCb1=props.value[1]
     const dataCb2=props.value[2]
+    const domain = process.env.REACT_APP_SERVER
     const handleDelete=()=>{
-        axios.delete(`${process.env.REACT_APP_URL_SERVER}/api/posts/delete-mes/${dataId[0].id}`)
+        axios.delete(`${domain}/api/posts/delete-mes/${dataId[0].id}`)
         .then(res => {
             dataCb1(res.data)
         }) 

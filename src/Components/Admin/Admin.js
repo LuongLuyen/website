@@ -6,9 +6,10 @@ function Admin(props) {
     const [data,setData] =useState(props.props)
     const [user, setUser] = useState([])
     const [check, setCheck] = useState(false)
+    const domain = process.env.REACT_APP_SERVER
     const deleteUser=()=>{
         console.log(user)
-        axios.delete(`${process.env.REACT_APP_URL_SERVER}/api/posts/delete-user/${user[0].username}`)
+        axios.delete(`${domain}/api/posts/delete-user/${user[0].username}`)
         .then(res => {
             setData(res.data)
             console.log(res.data)

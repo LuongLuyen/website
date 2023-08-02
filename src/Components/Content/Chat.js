@@ -3,7 +3,7 @@ import socketIOClient from "socket.io-client"
 import axios from 'axios'
 import Notice from './Notice'
 import './Chat.css'
-const host = process.env.REACT_APP_URL_SERVER
+const domain = process.env.REACT_APP_SERVER
 
 
 function Chat() {
@@ -26,7 +26,7 @@ function Chat() {
   }
   //get api
   useEffect(() => {
-      axios.get(process.env.REACT_APP_URL_MSG)
+      axios.get(`${domain}/api/posts/msg`)
       .then((response) => {
           setMess(response.data)
       })
@@ -41,7 +41,7 @@ function Chat() {
     }, [])
 
     useEffect(() => {
-      socketRef.current = socketIOClient.connect(host)
+      socketRef.current = socketIOClient.connect(domain)
       socketRef.current.on('sendDataServer', dataGot => {
         setMess(oldMsgs => [...oldMsgs, dataGot.data])
         scrollToBottom()

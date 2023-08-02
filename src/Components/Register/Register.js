@@ -8,10 +8,10 @@ function Register() {
     const [check, setCheck] = useState(false)
     const [username,setName]=useState('')
     const [password,setPass]=useState('')
-    const url=process.env.REACT_APP_URL_REGISTER
+    const domain=process.env.REACT_APP_SERVER
     const handleSubmit =()=>{
             setCheck(true)
-        axios.post(url, {username,password})
+        axios.post(`${domain}/api/posts/register`, {username,password})
         .then((res)=>{
             setData(res.data)
             setCheck(false)

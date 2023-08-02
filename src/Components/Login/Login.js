@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './Login.css'
 
 function Login() {
-    const url = process.env.REACT_APP_URL_LOGIN
+    const domain = process.env.REACT_APP_SERVER
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ function Login() {
             </div>
             <div>
                 <form method='POST' 
-                action={url}
+                action={`${domain}/api/posts/login`}
                 >
                     <div className='login_wrap'>
                         <label className='login_name'>Tên đăng nhập</label>
